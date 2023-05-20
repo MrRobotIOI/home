@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zed Ikejiani, Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="switch">
+                <div class="wrapper">
+                    <img src="img/switch.svg" alt="switch to light mode">
+                    <img class="alt" src="img/switch-alt.svg" alt="switch to dark mode">
+                </div>
+            </div>
+            <div class="intro">
+                <h1>Zed Ikejiani</h1>
+                <p>
+                    University student and <span>software developer</span> in training. Currently looking for internship
+                    opportunities.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+
+            <div class="row gif">
+                <div class="col image">
+                    <img src="img/blight-souls.gif" alt="gif from my video game, blight souls">
+                </div>
+                <div class="col description">
+                    <h2>Project 1</h2>
+                    <p class="ucase">C# / solo project / game development</p>
+                    <p>
+                        Developed a side-scroller game called “Blight Souls” with C# using Unity. Made scripts for the
+                        behaviour of the player, objects, and NPCs (Non-playable characters). Each object and NPC along
+                        with the player have scripts giving them different functions, effects, and properties such as a
+                        health bar and power bar, dealing damage, powering up an ability, spawning an object, movement,
+                        speeding up or slowing down, and playing sounds and animations.
+                    </p>
+                    <div class="button">
+                        <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">Download Game</a>
+                        <a href="docs/blight-souls-documentation.pdf" target="_blank">View Documentation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row reverse">
+                <div class="col description">
+                    <h2>Project 2</h2>
+                    <p class="ucase">Java / solo project</p>
+                    <p>
+                        Using a hash table class, I made to find the number of Integer Solutions to the equation:<br>
+                        Ax1 + Bx2^2+ Cx3^3+ Dx4^4+ Ex5^5= S<br>
+                        Where x1,x2,x3,x4 and x5 are in the range [-50, 50]<br>
+                        A,B,C,D,E and S are in the range [-5000, 5000]
+                    </p>
+                    <div class="button">
+                        <a target="_blank" href="https://github.com/mrrobotioi/hashtable">View on Github</a>
+                    </div>
+                </div>
+                <div class="col image">
+                    <img src="img/hashtable-java.png" alt="project 2">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col image">
+                    <img src="img/whatsthefloor.png" alt="project 3">
+                </div>
+                <div class="col description">
+                    <h2>Project 3</h2>
+                    <p class="ucase">Java / solo project</p>
+                    <p>
+                        Uses a graph along with stack, queue and vertex classes I made. Solves for the number of steps
+                        needed to get to a specific floor given the values of N (number of floors), U (up by x), D(down
+                        by x), X (starting floor), and Y (destination floor). Returns the answers within 1 second.
+                        <br>
+                        Imagine there is a building with N floors. And you need to get to a particular floor from
+                        whatever floor you’re currently on using an elevator.
+                        The elevator only has 3 buttons. <br>
+                        UP: a button saying “Up by U" where U is a positive integer (for example, \Up by 3"). By pushing
+                        this
+                        button, you will go up U floors, or until you reach the top floor. <br>
+                        Down: a button saying “Down by D" where D is a positive integer (for example, \Down by 21"). By
+                        pushing this button, you will go down D floors, or until you reach the ground floor (the 1st
+                        floor) <br>
+                        Jump: button saying “JUMP 2x", which will bring you to the floor number that is twice of the
+                        current one or hit the top floor. For example, if you are currently on floor 12, then pushing
+                        the JUMP button
+                        will bring you to floor 24, or to the top floor if the top floor is less than 24.
+                    </p>
+                    <div class="button">
+                        <a target="_blank" href="https://github.com/mrrobotioi/whats-the-floor">View on Github</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--
+    <section id="more">
+        <div class="container">
+            <h2>More Projects</h2>
+            <ul>
+                <li>
+                    Implemented a binary search tree in C that stores information on people that can be updated,
+                    searched, and displayed in a sorted order. <br>
+                    <a href="#">View on Github</a>
+                </li>
+                <li>lorem ipsum dolor sit amet</li>
+            </ul>
+        </div>
+    </section>
+-->
+
+
+    <section>
+        <div class="container">
+            <h2>Education</h2>
+            <h3>2019</h3>
+            <p>Graduated from Hillside high school</p>
+            <h3>2021</h3>
+            <p>Completed computer programming diploma in Sheridan college</p>
+            <h3>2023</h3>
+            <p>Currently studying at York University, Toronto, Canada</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li>
+                    <button onclick="topFunction()" id="myBtn" class="btn" title="Back to top">
+                        Back to top
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+                </li>
+                <li>
+                    <a href="docs/resume.pdf" target="_blank">Resume</a>
+                </li>
+                <li class="email">
+                    <span>Email</span> <span>zimikejiani[at]gmail[dot]com</span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+</body>
+
+</html>
