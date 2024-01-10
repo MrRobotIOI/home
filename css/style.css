@@ -18,6 +18,29 @@ body {
   background-position: 105% 300px;
   background-repeat: no-repeat;
 }
+
+.spacer{
+  aspect-ratio: 2000/500;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+  .layer1 {
+    background-image: url('../img/layered-peaks-haikei\ \(2\).svg');
+  }
+  .buttonstyle{
+    background-color:#f09b75 ;
+    width: 200px;
+    height: 40px !important;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   border-bottom: 100px !important;
+  }
+  .buttonstyle:hover{
+    background-image: url('../img/buttonwave.svg');
+    color: #f2eaea;
+  }
 h1 {
   font-size: 3em;
   color: #f09b75;
@@ -89,8 +112,8 @@ header .container {
   padding-bottom: 0;
 }
 .switch {
-  padding-top: 50px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
   display: inline-block;
 }
 .switch img {
@@ -167,7 +190,7 @@ p span {
 }
 
 /* Hide the images by default */
-.mySlides {
+.mySlides, .mySlides2 {
   display: none;
 }
 
@@ -220,7 +243,7 @@ p span {
 }
 
 /* The dots/bullets/indicators */
-.dot {
+.dot, .dot2 {
   cursor: pointer;
   height: 10px;
   width: 10px;
@@ -231,7 +254,7 @@ p span {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active, .dot:hover, .dot2:hover {
   background-color: #717171;
 }
 
@@ -277,6 +300,7 @@ p span {
 }
 .button a:hover {
   color: #fff;
+  background-image: url('../img/buttonwave2.svg');
 }
 
 #more ul li {
