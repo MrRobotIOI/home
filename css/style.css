@@ -184,13 +184,12 @@ p span {
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  max-height: 500px;
   position: relative;
   margin: auto;
 }
 
 /* Hide the images by default */
-.mySlides, .mySlides2 {
+.mySlides, .mySlides1, .mySlides2 {
   display: none;
 }
 
