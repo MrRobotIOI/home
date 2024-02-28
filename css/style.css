@@ -18,7 +18,10 @@ body {
   background-position: 105% 300px;
   background-repeat: no-repeat;
 }
-
+video{
+  max-width: 90%;
+  height: auto;
+}
 .spacer{
   aspect-ratio: 2000/500;
   width: 100%;
@@ -425,9 +428,7 @@ footer button:hover {
 }
 
 @media screen and (max-width: 980px) {
-  body {
-    background-size: 500px;
-  }
+ 
   .container {
     padding: 60px 5%;
   }
@@ -521,10 +522,7 @@ footer button:hover {
   .proj0{
     max-width: max-content;
   }
-  body {
-    background-size: 400px;
-    background-position: 60px 280px;
-  }
+ 
   .button a {
     margin-top: 10px;
   }
