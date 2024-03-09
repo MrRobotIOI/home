@@ -87,7 +87,7 @@ br {
 }
 img {
   height: auto;
-  max-width: 100%;
+  max-width: 110%;
 }
 ::-moz-selection {
   /* Code for Firefox */
@@ -135,7 +135,7 @@ header .container {
   margin-left: auto;
   margin-right: auto;
 
-  max-height:800px;
+  max-width:100%;
   
 }
 .proj0{
@@ -169,7 +169,7 @@ p span {
   background-color: transparent;
   border-radius: 15px;
   width: 550px;
-  height: 550px;
+  height: 386px;
   flex-shrink: 0;
   transition: 300ms transform;
   transform-origin: left;
@@ -177,7 +177,7 @@ p span {
   position: relative;
 }
 .reverse .image {
-  transform-origin: right;
+  transform-origin: right !important;
 } /*
 .image:hover {
   transform: scale(1.15);
@@ -275,7 +275,7 @@ p span {
 .image img {
   max-width: 600px;
   min-width: 100%;
-  min-height: 100%;
+ border-radius: 15px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -418,11 +418,10 @@ footer button:hover {
 
 @media screen and (max-width: 1200px) {
   .image {
-    width: 420px;
-    height: 420px;
+    max-width: 100%;
   }
   .image img {
-    max-width: 500px;
+    max-width: 100%;
   }
   
 }
@@ -442,6 +441,7 @@ footer button:hover {
   header p {
     width: 100%;
   }
+
   .row {
     flex-direction: column;
   }
@@ -470,16 +470,26 @@ footer button:hover {
   .proj0{
     max-width: max-content;
   }
+  p {
+    margin: 10px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  p {
+    margin: 10px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
   h1 {
     font-size: 2em;
   }
   h2 {
     font-size: 19px;
   }
-  p,
+ 
   header p,
   ul li {
     font-size: 15px;
@@ -519,6 +529,11 @@ footer button:hover {
 }
 
 @media screen and (max-width: 420px) {
+    p {
+    margin: 10px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
   .proj0{
     max-width: max-content;
   }
