@@ -275,6 +275,7 @@ p span {
 .image img {
   max-width: 600px;
   min-width: 100%;
+  height: auto !important;
  border-radius: 15px;
   position: absolute;
   left: 50%;
