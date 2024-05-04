@@ -1,14 +1,14 @@
-let slideIndex = [1,1,2];
+let slideIndex = [1,1];
 /* Class the members of each slideshow group with different CSS classes */
 let slideId = ["mySlides1", "mySlides2", "mySlides3"]
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
+showSlidescopy(1, 0);
+showSlidescopy(1, 1);
+
+function plusSlidescopy(n, no) {
+  showSlidescopy(slideIndex[no] += n, no);
 }
 
-function showSlides(n, no) {
+function showSlidescopy(n, no) {
   let i;
   let x = document.getElementsByClassName(slideId[no]);
   if (n > x.length) {slideIndex[no] = 1}
