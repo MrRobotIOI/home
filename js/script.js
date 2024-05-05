@@ -1,63 +1,213 @@
-var html = document.getElementsByTagName("html")[0];
-var lmode = document.querySelector('.switch .wrapper');
+//back to top button behaviour
+let mybutton = document.getElementById("mybtn");
+function topFunction() {
+  //document.getElementsByTagName("html")[0].classList.add("testsss");
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
-lmode.onclick = function () {
-    if (html.classList.contains("clicked")) {
-        html.classList.remove("clicked");
-    } else {
-        html.classList.add("clicked");
+//scrolling functionality
+(function () {
+  var prevScrollpos = window.pageYOffset;
+
+  var htmlsec = document.getElementsByTagName("html")[0];
+  //var bodysec = document.getElementsByTagName("body")[0];
+  var hero = document.getElementById("home");
+  var section = document.querySelectorAll("section");
+  var projectid = document.getElementById("projects");
+  var aboutid = document.getElementById("about");
+  var projects = document.getElementsByClassName("project");
+  var projecth2 = document.querySelectorAll(".project h2");
+  var thumbnail = document.querySelector(".project-bkgimg");
+  var carousel = document.querySelectorAll(".project-carousel");
+
+  var scroll = document.querySelectorAll(".scrollbar .dot");
+  var scrollsec = document.querySelectorAll("section > .container");
+
+  function onScroll() {
+    var visible = document.querySelector(".visible");
+
+    var currentScrollPos = window.pageYOffset;
+    prevScrollpos = currentScrollPos;
+
+    if (hero) {
+      if (elementInViewport(hero)) {
+        htmlsec.classList.add("hero-view");
+      } else {
+        htmlsec.classList.remove("hero-view");
+      }
     }
-}
+    if (projectid) {
+      if (elementInViewport(projectid) && !elementInViewport(aboutid)) {
+        htmlsec.classList.add("fixed");
+      } else {
+        htmlsec.classList.remove("fixed");
+      }
+    }
+    if (htmlsec) {
+      if (elementInViewport(hero) || elementInViewport(aboutid)) {
+        htmlsec.classList.add("scroll-snap");
+      } else {
+        htmlsec.classList.remove("scroll-snap");
+      }
+    }
+    var list = [];
+    for (var i = 0; i < projects.length; i++) {
+      var projh2 = projecth2[i];
+      var carousels = carousel[i];
+      var projs = projects[i];
 
-let slideIndex = 1;
-showSlides(slideIndex);
-showSlides2(slideIndex);
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+      if (visible) {
+        var imgsource = document.querySelectorAll(".visible img");
+        thumbnail.style.backgroundImage = "url(" + imgsource[0].src + ")";
+      }
+    }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-function plusSlides2(n) {
-  showSlides2(slideIndex += n);
-}
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
-// Thumbnail image controls
-function currentSlide2(n) {
-  showSlides2(slideIndex = n);
-}
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    function plusDivs(n) {
+      showDivs((slideIndex += n));
+    }
+
+    function showDivs(n) {
+      var ii;
+      var x = document.querySelectorAll("#div0 .project-carousel img");
+      if (visible) {
+        x = document.querySelectorAll(".visible .project-carousel img");
+      }
+
+      if (n > x.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = x.length;
+      }
+      for (ii = 0; ii < x.length; ii++) {
+        x[ii].classList.remove("active");
+      }
+      x[slideIndex - 1].classList.add("active");
+    }
+
+    if (scroll[0]) {
+      scroll[0].classList.add("active");
+    }
+
+    for (var i = 0; i < scrollsec.length; i++) {
+      var scrolls = scroll[i];
+
+      if (elementInViewport(scrollsec[0])) {
+        scrolls.classList.remove("active");
+        scroll[0].classList.add("active");
+      }
+      if (elementInViewport(scrollsec[1])) {
+        scrolls.classList.remove("active");
+        scroll[1].classList.add("active");
+      }
+      if (elementInViewport(scrollsec[2])) {
+        scrolls.classList.remove("active");
+        scroll[2].classList.add("active");
+      }
+    }
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+
+  function elementInViewport(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+
+    while (el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+
+    return (
+      top < window.pageYOffset + window.innerHeight &&
+      left < window.pageXOffset + window.innerWidth &&
+      top + height > window.pageYOffset &&
+      left + width > window.pageXOffset
+    );
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  window.onscroll = onScroll;
+})();
+
+//adds id name to project onload and adds 'visible' class to project when project is in viewport
+var projects = document.getElementsByClassName("project");
+var list = [];
+for (var i = 0; i < projects.length; i++) {
+  var projs = projects[i];
+
+  list.push("div" + i);
+
+  var listindex = list.length;
+
+  if (listindex > 0) {
+    projs.setAttribute("id", "div" + i);
+  }
+  console.log(list);
 }
 
+let callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle("visible", entry.isIntersecting);
+  });
+};
+let observer = new IntersectionObserver(callback, {
+  threshold: [0.5], // If 50% of the element is in the screen, we count it!
+  // Can change the thresholds based on your needs. The default is 0 - it'll run only when the element first comes into view
+});
 
-function showSlides2(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides2");
-  let dots = document.getElementsByClassName("dot2");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+list.forEach((d) => {
+  const div = document.getElementById(d);
+  if (div) observer.observe(div);
+});
+
+//make carousel images visible when in viewport
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs((slideIndex += n));
+}
+
+function showDivs(n) {
+  var ii;
+  var x = document.querySelectorAll(".visible .project-carousel img");
+  var x2 = document.querySelectorAll(".visible .project-carousel img .desctext");
+  if (n > x.length) {
+    slideIndex = 1;
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  if (n < 1) {
+    slideIndex = x.length;
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  for (ii = 0; ii < x.length; ii++) {
+    x[ii].classList.remove("active");
+  }
+  x[slideIndex - 1].classList.add("active");
+}
+
+//make carousel image text visible when in viewport
+var slideIndex2 = 1;
+showDivs2(slideIndex2);
+
+function plusDivs2(n) {
+  console.log("2");
+  showDivs2((slideIndex2 += n));
+}
+
+function showDivs2(n) {
+  var ii;
+  var x = document.querySelectorAll(".visible .project-carousel .desctext div");
+  if (n > x.length) {
+    slideIndex2 = 1;
+  }
+  if (n < 1) {
+    slideIndex2 = x.length;
+  }
+  for (ii = 0; ii < x.length; ii++) {
+    x[ii].classList.remove("active");
+  }
+  x[slideIndex2 - 1].classList.add("active");
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="hero-view">
 
 <head>
     <meta charset="UTF-8">
@@ -12,371 +12,296 @@
         rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <meta property="og:image" content="img/favicon.png" />
 </head>
 
 <body>
+    <!--background columns-->
+    <div class="bkg">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--end background columns-->
+
 
     <header>
-        <!--
-        <div style="text-align: center; ">
-            <div style="flex-direction: row; ">
-                <button class="buttonstyle">
-                    link 1
-                </button>
-                <button class="buttonstyle">
-                    link 1
-                </button>
-            </div>
-        </div>
--->
-
         <div class="container">
-            <div class="switch">
-                <div class="wrapper">
-                    <img src="img/switch.svg" alt="switch to light mode">
-                    <img class="alt" src="img/switch-alt.svg" alt="switch to dark mode">
-                </div>
-            </div>
-            <div class="intro">
-                <h1>Zed Ikejiani</h1>
-                <p>
-
-                    University student and <span>software developer / technical game designer</span> in training. Currently looking for
-                    internship/co-op
-                    opportunities.
-
-                </p>
-                <div class="button coolhover" style="display: inline-block;">
-                    <a target="_blank" href="https://github.com/MrRobotIOI">Github</a>
-
-                </div>
-                <div class="button">
-                    <a href="./index2.html" target="_blank">3d Work</a>
-                   
-                </div>
-            </div>
+            <ul>
+                <li>
+                    <button onclick="topFunction()" id="mybtn" class="btn" title="Back to top">
+                        Back to top
+                    </button>
+                </li>
+                <li>
+                    <a href="3dwork.html">3d work</a>
+                </li>
+                <li>
+                    <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="docs/Zed_Ikejiani_Resume%203.pdf" target="_blank">Resume</a>
+                </li>
+            </ul>
+            <ul class="email">
+                <li>
+                    Contact me at <span>zimikejiani[at]gmail[dot]com</span>
+                </li>
+            </ul>
         </div>
     </header>
 
-    <section>
-        <div class="container">
-          
-            <div class="row  reverse">
-                <div class="col description " style="max-width: 800px;">
-                   
-                    <h2>Marvel Snap GO</h2>
-                    <p class="ucase">React / Next.js / C# .NET / Postgresql</p>
-                    
-                    <p>
-                        	Developed a web application that features Marvel Snap cards  and uses the  Marvel Comics API. It uses a spawning system to  generate random cards on a random co-ordinate within a specified radius on a map created with the Google Maps API. It also allows users to collect these cards and add them to their collection while they explore the real world.
-	                         
-                      </p>
-                     
-                     <p>   Uses the  React framework, Next.js, for the front end and C# .NET for the backend, with a PostgreSQL database. The application features user authentication using Google OAuth and includes database user session persistence. 
-                        <p>   Uses the  React framework, Next.js, for the front end and C# .NET for the backend, with a PostgreSQL database. The application features user authentication using Google OAuth and includes database user session persistence. 
-                            <div class="button coolhover" style="display: inline-block;">
-                                <a target="_blank" href="https://marvel-snap-go.vercel.app">View Website</a>
+    <!--ignore, fixes overscroll issue-->
+    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+    <!--ignore-->
 
-                            </div>
-                            <span class="ucase" ><a target="_blank" href="https://github.com/MrRobotIOI/MarvelSnapGO">Front-End</a>    /   <a target="_blank" href="https://github.com/MrRobotIOI/api.marvelsnapgo">Back-End</a></span>
-                        </p>
+
+    <section id="home">
+        <div class="container">
+            <p style="font-family: 'Poppins', sans-serif;">hi, i'm</p>
+            <h1>ZED <br>IKEJIANI</h1>
+            <div class="arrow-wrapper">
+                <a href="#projects" class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.601 127.375">
+                        <g id="Group_20" data-name="Group 20" transform="translate(-277.552 -921.771)">
+                            <path id="Path_26" data-name="Path 26" d="M6491.853,776.227v90"
+                                transform="translate(-6207 145.544)" fill="none" stroke="#f49d38" stroke-width="2" />
+                            <path id="Path_55" data-name="Path 55" d="M8838.813,2070.339l10.895-7.3-10.895-7.3Z"
+                                transform="translate(2347.891 -7800.561) rotate(90)" fill="#f49d38" />
+                        </g>
+                    </svg>
+
+                </a>
+                <p style="font-family: 'Poppins', sans-serif;">
+                    software developer <br>
+                    & technical game designer <br>
+                    & university student
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <div class="project-bkg">
+            <div>
+                <div class="project-bkgimg"></div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="project visible">
+                <h2>Marvel Snap GO</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                     
+                        React / Next.js / C# .NET / Postgresql
                     </p>
 
-                     <div class="button">
-                   </div>
-                </div>
-                <div class="col">
-                    <div class="slideshow-container">
+                    <p>
+                       <p>Developed a web application that features Marvel Snap cards and uses the Marvel Comics API. It uses a spawning system to generate random cards on a random co-ordinate within a specified radius on a map created with the Google Maps API. It also allows users to collect these cards and add them to their collection while they explore the real world.</p> 
 
-                        <!-- Full-width imagdes with number and caption text -->
-                        <div class="mySlides1 fade">
-                            <div class="numbertext" style="padding-left: 100px;">1 / 4</div>
-                            <img src="img/MSGO/map3.png" style="width:100%">
-                            <div class="text">Map View</div>
+                      </p>
+                    <div class="button">
+                        <a href="https://marvel-snap-go.vercel.app" target="_blank">VIEW WEBSITE</a>
+                    </div>
+                </div>
+                <div class="r-col" >
+                    <div class="project-carousel" style="max-width: 250px;">
+                        <img class="active" style="max-width: 250px;"src="img/MSGO/map2.png" alt="screenshot of insomnia">
+                        <img" src="img/MSGO/collection1.png" alt="screenshot of insomnia">
+                        <img src="img/MSGO/collection2.png" alt="screenshot of insomnia">
+                        <img src="img/MSGO/map3.png" alt="screenshot of insomnia">
+     
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
                         </div>
-            
-                        <div class="mySlides1 fade">
-                            <div class="numbertext"  style="padding-left: 100px;">2 / 4</div>
-                            <img src="img/MSGO/collection1.png" style="width:100%">
-                            <div class="text">Collection View</div>
-                        </div>
-                      
-                        <div class="mySlides1 fade">
-                            <div class="numbertext" style="padding-left: 100px;">3 / 4</div>
-                            <img src="img/MSGO/collection2.png" style="width:100%">
-                            <div class="text"></div>
-                        </div>
-                        <div class="mySlides1 fade">
-                            <div class="numbertext" style="padding-left: 100px;">4 / 4</div>
-                            <img src="img/MSGO/map2.png" style="width:100%">
-                            <div class="text"></div>
-                        </div>
-                        <!-- Next and previous buttons -->
-                        <a class="prev" style="background-color: rgb(63 0 0 / 80%);" onclick="plusSlides(-1,0)">&#10094;</a>
-                        <a class="next" style="background-color: rgb(63 0 0 / 80%);" onclick="plusSlides(1,0)">&#10095;</a>
-            
-            
-            
-            
-            
-            
+
                     </div>
                 </div>
             </div>
 
 
-            <div class="row reverse blue">
-                <div class="col description proj0">
-                    <h2>Model Kit Database</h2>
-                    <p class="ucase">JavaScript / React / Vite / Node / Express / MongoDB / solo project</p>
+            <div class="project visible">
+                <h2>Insomnia</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                        Role: Lead developer <br>
+                        C# / Unity / Game Development
+                    </p>
+
+                    <p>
+                        Insomnia is a first-person 3d adventure game that uses aspects of time and space. 
+                        As the player explores they get clues from "echoes",
+                         the souls of the dead. They use those clues to acquire keys, unlock the exit and end the game.
+                    </p>
+                    <div class="button">
+                        <a href="https://ketana.itch.io/insomnia" target="_blank">VIEW GAME</a>
+                    </div>
+                </div>
+                <div class="r-col">
+                    <div class="project-carousel">
+                        <img class="active" src="img/startmenu.png" alt="screenshot of insomnia">
+                        <img src="img/insomnia-1.png" alt="screenshot of insomnia">
+                        <img src="img/tracking-turrets.gif" alt="screenshot of insomnia">
+                        <img src="https://mrrobotioi.github.io/home/vids/timing.gif" alt="screenshot of insomnia">
+                        <img src="https://mrrobotioi.github.io/home/vids/ghost_floors.gif" alt="screenshot of insomnia">
+                        <img src="https://mrrobotioi.github.io/home/vids/infinity.gif" alt="screenshot of insomnia">
+
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                        </div>
+                        <div class="desctext wrapper"> 
+                            <div class="active desctitle" id="slide">Start Menu</div>
+                            <div></div>
+                            <div id="slide">
+                        
+                   
+                                <p class="desctitle">Bullet Time Mechanic and Lock on Turrets</p>
+                                <p>
+                                    The player can enter and exit bullet time to evade or move through platform obstacles. 
+                                    Lock-on turrets that move to chase the player. Since it uses Unity's delta time, the speed at 
+                                    which the turrets rotate towards the player can be adjusted regardless of if bullet time is activated.
+                                 </p>
+            
+                                
+                            
+                           </div> 
+                             <div id="slide">
+                                <p class="desctitle">PLATFORM OBSTACLES</p>
+
+                                <p>Moving platforms that require the player to get the correct timing.</p>
+
+                                </div>
+                            <div id="slide">
+                                <p class="desctitle">GHOST FLOORS</p>
+
+                               <p> An obstacle that requires the player to follow an object 
+                                that temporarily reveals floors. The speed at which the object moves on its path can be changed.
+                                 </p>
+                            </div>
+                            <div id="slide">
+                                <p class="desctitle">TIME BUBBLE</p>
+
+                                <p> An obstacle that changes the velocity of objects that enter it including the player.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <h2>Model Kit Database</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                        JavaScript / React / Vite / Node / Express / MongoDB / solo project
+                    </p>
+
                     <p>
                         Developed a website that displays a catalogue of Version Katoki (Ver. Ka) Gundam model kits.
                         Each model kit has an info page containing a video about it and links to stores that sell it.
-                        Also has a display and UI optimized for mobile and desktop<br>
-                        The Front-End uses React, Vue, and Node.js and is deployed using GitHub pages.
-                        The backend uses MongoDB for the database and Node.js along with Express for the backend API. It is kept running by an AWS EC2
-                                Instance.<br>
-                        Also used REST APIs like Google’s YouTube Data API and Maven dependencies via Java to gather
-                        data and input it into the MongoDB Database.
-                    </p>
-                    <div>
-                        <div class="button coolhover" style="display: inline-block;">
-                            <a target="_blank" href="https://mrrobotioi.github.io/gundzero/">View Website</a>
-                        </div>
-                        <div class="button coolhover" style="display: inline-block;">
-                            <a style="font-size: 12px; font-weight: 500;" target="_blank"
-                                href="https://github.com/MrRobotIOI/gund-arm">Front-End (Github)</a>
-                        </div>
-                        <div class="button coolhover" style="display: inline-block;">
-                            <a style="font-size: 12px; font-weight: 500;" target="_blank"
-                                href="https://github.com/MrRobotIOI/gund-arm-api">Back-End (Github)</a>
-                        </div>
-                        <div class="button coolhover" style="display: inline-block;">
-                            <a style="font-size: 12px; font-weight: 500;" target="_blank"
-                                href="https://github.com/MrRobotIOI/gund-helpers">Programs (Github)</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container">
-
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">1 / 7</div>
-                            <img src="img/desktop1.png" style="width:100%">
-
-
-                        </div>
-
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">2 / 7</div>
-                            <img src="img/mobile1.png" class="center" style="max-width:60%">
-
-                        </div>
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">3 / 7</div>
-                            <img src="img/mobilesearch.png" class="center" style="max-width:60%">
-
-                        </div>
-
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">4 / 7</div>
-                            <img src="img/desktop2.png" class="center" style="width:100%">
-
-                        </div>
-
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">5 / 7</div>
-                            <img src="img/desktopvid.png" class="center" style="width:100%">
-
-                        </div>
-
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">6 / 7</div>
-                            <img src="img/mobile2.png" class="center" style="max-width:60%">
-
-                        </div>
-                        <div class="mySlides2 fade">
-                            <div class="numbertext">7 / 7</div>
-                            <img src="img/mobile3.png" class="center" style="max-width:60%">
-
-                        </div>
-
-                        <!-- Next and previous buttons -->
-                        <a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1,1)">&#10095;</a>
-                    </div>
-                    <br>
-
-                    <!-- The dots/circles -->
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
-                        <span class="dot" onclick="currentSlide(5)"></span>
-                        <span class="dot" onclick="currentSlide(6)"></span>
-                        <span class="dot" onclick="currentSlide(7)"></span>
-
-                    </div>
-                </div>
-            </div>
-
-        
-            <div class="row gif">
-                <div class="col image">
-                    <img src="img/startmenu.png" alt="gif from my video game, Insomnia" style="width: 100%;">
-                </div>
-                <div class="col description">
-                    <h2>Insomnia</h2>
-                    <p class="ucase">C# / Unity / Game Development</p>
-                    <p>
-                        Insomnia is a first-person 3d adventure game that uses aspects of time and space. 
-                        As the player explores they get clues from "echoes", the souls of the dead. They use those clues to acquire keys, unlock the exit and end the game.
-                    </p>
-                    <div class="button" >
-                        <a href="https://ketana.itch.io/insomnia" target="_blank"> View Game</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row  reverse">
-                <div class="col description ">
-                   
-                    <p class="ucase">Bullet Time Mechanic and Lock on Turrets</p>
-                    <p>
-                        The player can enter and exit bullet time to evade or move through platform obstacles. 
-                        Lock-on turrets that move to chase the player. Since it uses Unity's delta time, the speed at 
-                        which the turrets rotate towards the player can be adjusted regardless of if bullet time is activated.
-                     </p>
-
-                     <div class="button">
-                   </div>
-                </div>
-                <div class="col image">
-                    <img src="vids/tracking turrets.gif" alt="gif from my video game, Insomnia">
-                
-                </div>
-            </div>
-    
-            <div class="row  reverse">
-                <div class="col description ">
-                   
-                    <p class="ucase">Platform Obstacles</p>
-                    <p>
-                      Moving platforms that require the player to get the correct timing.
-                    </p>
-
-                     <div class="button">
-                   </div>
-                </div>
-                <div class="col image">
-                    <img src="vids/timing.gif" alt="gif from my video game, Insomnia">
-                
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col image">
-                    <img src="vids/ghost_floors.gif" alt="gif from my video game, Insomnia" style=" width: 100%;">
-                </div>
-                <div class="col description">
-                  
-                    <p class="ucase">Ghost floors</p>
-                    <p>
-                       An obstacle that requires the player to follow an object that temporarily reveals floors.
-                       The speed at which the object moves on its path can be changed.
+                        Also has a display and UI optimized for mobile and desktop
+                        <br> The Front-End uses React, Vue, and Node.js and is deployed using GitHub pages. The backend
+                        uses MongoDB for the database and Node.js along with Express for the backend API. It is kept
+                        running by an AWS EC2 Instance.
+                        <br> Also used REST APIs like Google’s YouTube Data API and Maven dependencies via Java to
+                        gather data and input it into the MongoDB Database.
                     </p>
                     <div class="button">
+                        <a href="https://ketana.itch.io/insomnia" target="_blank">VIEW WEBSITE</a>
+                    </div>
+                    <div class="button">
+                        <a href="https://github.com/MrRobotIOI/gund-arm" target="_blank">SOURCE CODE (FRONT-END)</a>
+                    </div>
+                    <div class="button">
+                        <a href="https://github.com/MrRobotIOI/gund-arm-api" target="_blank">SOURCE CODE (BACK-END)</a>
+                    </div>
+                    <div class="button">
+                        <a href="https://github.com/MrRobotIOI/gund-helpers" target="_blank">Programs (Github)</a>
+                    </div>
+                </div>
+
+                <div class="r-col">
+                    <div class="project-carousel">
+
+                        <img class="active" src="https://mrrobotioi.github.io/home/img/desktop1.png"
+                            alt="screenshot of insomnia">
+                        <img src="https://mrrobotioi.github.io/home/img/mobile1.png" alt="screenshot of insomnia">
+                        <img src="https://mrrobotioi.github.io/home/img/desktop2.png" alt="screenshot of insomnia">
+
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col image">
-                    <img src="vids/infinity.gif" alt="gif from my video game, Insomnia" style=" width: 100%;">
-                </div>
-                <div class="col description">
-                  
-                    <p class="ucase">Time Bubble</p>
+
+            <div class="project">
+                <h2>Wake</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                        Unreal Engine / C++
+                    </p>
+
                     <p>
-                       An obstacle that changes the velocity of objects that enter it including the player.
+                        Wake is an adrenaline-pumping third-person parkour game set in a futuristic sci-fi world.
+                        Players must use WASD and Spacebar to run, jump, and navigate through a series of obstacles to
+                        reach the end platform. With abilities like boost, dash, and Antigravity, they can enhance their
+                        movement and control in the air. The game features various platform types and traps, including
+                        sinking red platforms, tilting blue platforms, and rotating trap floor platforms. Players can
+                        also wall run on green-lit walls for added agility. The ultimate goal is to reach the green goal
+                        platform to win the game.
                     </p>
                     <div class="button">
+                        <a href="https://mrrobotioi.itch.io/wake" target="_blank">VIEW GAME</a>
+                    </div>
+                </div>
+                <div class="r-col">
+                    <div class="project-carousel">
+
+                        <img src="img/running.png" alt="screenshot of Wake">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTM2My5wbmc=/794x1000/udUmOg.png"
+                            alt="screenshot of Wake">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTE5OC5wbmc=/794x1000/hH5A7e.png"
+                            alt="screenshot of Wake">
+
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="row reverse blue">
-                <div class="col description proj0">
-                    <h2>Wake</h2>
-                    <p class="ucase">Unreal Engine / C++</p>
-                    <p>
-                        Wake is an adrenaline-pumping third-person parkour game set in a futuristic sci-fi world. Players must use WASD and Spacebar to run, 
-                        jump, and navigate through a series of obstacles to reach the end platform. With abilities like boost, dash, and Antigravity, they can 
-                        enhance their movement and control in the air. The game features various platform types and traps, including sinking red platforms, tilting blue platforms, and rotating trap floor platforms. 
-                        Players can also wall run on green-lit walls for added agility. The ultimate goal is to reach the green goal platform to win the game.
-                       
-                     </p>
 
-                     <div class="button">
-                     <a href="https://mrrobotioi.itch.io/wake" target="_blank">View Game</a>
-                     </div>
-                </div>
-                <div class="col">
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container">
+            <div class="project">
+                <h2>Blight Souls</h2>
 
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides3 fade">
-                            <div class="numbertext">1 / 4</div>
-                            <img src="img/running.png" class="center" style="width:100%">
+                <div class="l-col">
 
+                    <p class="subtitle">
+                        C# / Game Development
+                    </p>
 
-                        </div>
-
-                        <div class="mySlides3 fade">
-                            <div class="numbertext">2 / 4</div>
-                            <img src="img/coolparticles.png" class="center" >
-
-                        </div>
-                        <div class="mySlides3 fade">
-                            <div class="numbertext">3 / 4</div>
-                            <img src="img/endgoal.png" class="center" >
-
-                        </div>
-
-                
-
-
-                        <div class="mySlides3 fade">
-                            <div class="numbertext">4 / 4</div>
-                            <img src="img/spawn.png" class="center" >
-
-                        </div>
-               
-
-                        <!-- Next and previous buttons -->
-                        <a class="prev"  onclick="plusSlides(-1,2)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1,2)">&#10095;</a>
-                    </div>
-                    <br>
-
-              
-                </div>
-            </div>
-    
-            <div class="row gif">
-                <div class="col image">
-                    <img src="img/blight-souls.gif" alt="gif from my video game, blight souls">
-                </div>
-                <div class="col description">
-                    <h2>Blight Souls</h2>
-                    <p class="ucase">C# / Game Development</p>
                     <p>
                         Developed a side-scroller game called “Blight Souls” with C# using Unity. Made scripts for the
                         behaviour of the player, objects, and NPCs (Non-playable characters). Each object and NPC along
@@ -385,125 +310,159 @@
                         speeding up or slowing down, and playing sounds and animations.
                     </p>
                     <div class="button">
-                        <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">View Game</a>
-                        <a href="docs/blight-souls-documentation.pdf" target="_blank">View Documentation</a>
+                        <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">VIEW GAME</a>
+                    </div>
+                    <div class="button">
+                        <a href="https://mrrobotioi.github.io/home/docs/blight-souls-documentation.pdf"
+                            target="_blank">VIEW DOCUMENTATION</a>
+                    </div>
+                </div>
+                <div class="r-col">
+                    <div class="project-carousel">
+
+                        <img class="active"
+                            src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI2MC5wbmc=/794x1000/OAZbDw.png"
+                            alt="screenshot of Blight Souls">
+                        <img src="img/blight-souls.gif" alt="screenshot of Blight Souls">
+                        <img src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI0MC5wbmc=/794x1000/L%2FvQgg.png"
+                            alt="screenshot of Blight Souls">
+
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="row reverse">
-                <div class="col description">
-                    <h2>Hash Table Solver</h2>
-                    <p class="ucase">Java / solo project</p>
-                    <p>
-                        Using a hash table class, I made to find the number of Integer Solutions to the equation:<br>
-                        Ax1 + Bx2^2+ Cx3^3+ Dx4^4+ Ex5^5= S<br>
-                        Where x1,x2,x3,x4 and x5 are in the range [-50, 50]<br>
-                        A,B,C,D,E and S are in the range [-5000, 5000]
+
+
+            <div class="project">
+                <h2>GWENT Java</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                        Java / OOP
                     </p>
+
+                    <p>
+                        <p>Based on and implements some of the gameplay and mechanics from the GWENT mini-card game from the video game "The Witcher 3: The Wild Hunt”.</p>
+                        <p>It uses Java AWT components to render cards, the board and UI elements. Implements class relationships such as inheritance to make card variants, composition to give the board a card objects and an Ability interface to give unique abilities to cards that implement it.  </p>
+
+                     </p>
                     <div class="button">
-                        <a target="_blank" href="https://github.com/mrrobotioi/hashtable">View on Github</a>
+                        <a href="https://github.com/MrRobotIOI/Gwent-Java" target="_blank">View on Github</a>
                     </div>
+                 
                 </div>
-                <div class="col image">
-                    <img src="img/hashtable-java.png" alt="project 2">
+                <div class="r-col">
+                    <div class="project-carousel">
+
+                        <img class="active"
+                            src="img/GWENT.gif"
+                            alt="screenshot of Blight Souls"
+                            style="max-width: 4000px;"
+                            >
+                            
+                       <img src="img/Gwent.png"
+                            alt="screenshot of Blight Souls">
+
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col image">
-                    <img src="img/whatsthefloor.png" alt="project 3">
-                </div>
-                <div class="col description">
-                    <h2>What's the floor</h2>
-                    <p class="ucase">Java / solo project</p>
-                    <p>
-                        Uses a graph along with stack, queue and vertex classes I made. Solves for the number of steps
-                        needed to get to a specific floor given the values of N (number of floors), U (up by x), D(down
-                        by x), X (starting floor), and Y (destination floor). Returns the answers within 1 second.
-                        <br>
-                        Imagine there is a building with N floors. And you need to get to a particular floor from
-                        whatever floor you’re currently on using an elevator.
-                        The elevator only has 3 buttons. <br>
-                        UP: a button saying “Up by U" where U is a positive integer (for example, \Up by 3"). By pushing
-                        this
-                        button, you will go up U floors, or until you reach the top floor. <br>
-                        Down: a button saying “Down by D" where D is a positive integer (for example, \Down by 21"). By
-                        pushing this button, you will go down D floors, or until you reach the ground floor (the 1st
-                        floor) <br>
-                        Jump: button saying “JUMP 2x", which will bring you to the floor number that is twice of the
-                        current one or hit the top floor. For example, if you are currently on floor 12, then pushing
-                        the JUMP button
-                        will bring you to floor 24, or to the top floor if the top floor is less than 24.
-                    </p>
-                    <div class="button">
-                        <a target="_blank" href="https://github.com/mrrobotioi/whats-the-floor">View on Github</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section>
-    <!--
-    <section id="more">
-        <div class="container">
-            <h2>More Projects</h2>
-            <ul>
-                <li>
-                    Implemented a binary search tree in C that stores information on people that can be updated,
-                    searched, and displayed in a sorted order. <br>
-                    <a href="#">View on Github</a>
-                </li>
-                <li>lorem ipsum dolor sit amet</li>
-            </ul>
-        </div>
-    </section>
--->
 
 
-    <section>
+    <section id="about">
         <div class="container">
             <h2>Education</h2>
-            <h3>2019</h3>
-            <p>Graduated from Hillside high school</p>
-            <h3>2021</h3>
-            <p>Completed Computer Programming diploma in Sheridan college</p>
-            <h3>2021-Present</h3>
-            <p>Currently studying at York University, Toronto, Canada</p>
+            <h3>York University - Current</h3>
+            <p>
+                I’m a Digital Media (Game Arts) student at York University. <a
+                    href="https://lassonde.yorku.ca/academics/digital-media" target="_blank">Digital Media</a> is a
+                program offered by the Lassonde school of engineering.
+            </p>
+            <p class="subtitle">
+                Courses
+            </p>
+            <p>
+                Object Oriented Programming-Java, Data Structures, Shell Scripting, Game & Web Development, 3d modelling
+            </p>
+
+            <h3>Sheridan College - Previous</h3>
+            <p>
+                Diploma in Computer Programming
+            </p>
+
+            <h2>Contact</h2>
+            <h3>zimikejiani[at]gmail[dot]com</h3>
+            <p>
+                I’m currently open to internship opportunities. Feel free to reach out!
+            </p>
+            <p>
+                <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+                <a href="docs/Zed_Ikejiani_Resume%203.pdf" target="_blank">Resume</a>
+            </p>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <ul>
-                <li>
-                    <button onclick="topFunction()" id="myBtn" class="btn" title="Back to top">
-                        Back to top
-                    </button>
-                </li>
-                <li>
-                    <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
-                </li>
-                <li>
-                    <a href="docs\Zed_Ikejiani_Resume 3.pdf" target="_blank">Resume</a>
-                </li>
-                <li class="email">
-                    <span>Email</span> <span>zimikejiani[at]gmail[dot]com</span>
-                </li>
-            </ul>
-        </div>
-    </footer>
 
-    <script src="js/script2.js"></script>
- 
+    <div class="scrollbar">
+        <div onclick="currentDot(1)" class="dot active">
+            <a href="#"></a>
+        </div>
+        <div onclick="currentDot(2)" class="dot">
+            <a href="#projects"></a>
+        </div>
+        <div onclick="currentDot(3)" class="dot">
+            <a href="#about"></a>
+        </div>
+    </div>
+
+
+    <!--ignore, fixes overscroll issue-->
+    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+    <!--ignore-->
+
+
+    <script src="js/script.js"></script>
 
     <script>
-        let mybutton = document.getElementById("myBtn");
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        //nav sidebar indicators
+        let dotIndex = 1;
+        showDots(dotIndex);
+
+        function plusDots(n) {
+            showDots(dotIndex += n);
+        }
+
+        function currentDot(n) {
+            showDots(dotIndex = n);
+        }
+        function showDots(n) {
+            let k;
+            let slides = document.querySelectorAll("section > .container");
+            let navdots = document.getElementsByClassName("dot");
+            if (n > slides.length) { dotIndex = 1 }
+            if (n < 1) { dotIndex = slides.length }
+            for (k = 0; k < navdots.length; k++) {
+                navdots[k].className = navdots[k].className.replace(" active", "");
+            }
+            navdots[dotIndex - 1].className += " active";
         }
     </script>
+
 </body>
 
 </html>
