@@ -25,7 +25,7 @@ section {
   scroll-snap-align: none;
 }
 html.scroll-snap {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 .scroll-snap section {
   scroll-snap-align: start;
