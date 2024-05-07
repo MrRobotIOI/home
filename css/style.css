@@ -238,7 +238,7 @@ section .container {
   width: 95%;
   right: 0;
   top: 90px;
-  background-color: #000;
+  background-color: #000000b8;
   opacity: 1;
   transition: 0.3s opacity;
 }
@@ -389,7 +389,7 @@ section .container {
 }
 
 .desctitle{
-  color: #205bff;
+  color: #20a6ff;
 }
 .project-carousel button {
   width: 40px;
@@ -397,7 +397,7 @@ section .container {
   border-radius: 50%;
   display: inline-block;
   margin-left: 5px;
-  background-color: #fff;
+  background-color: #ffffffbd;
   box-shadow: 0 0 10px #121621;
 }
 .project-carousel button:hover {
