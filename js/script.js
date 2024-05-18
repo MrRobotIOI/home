@@ -155,7 +155,7 @@ let callback = (entries, observer) => {
   });
 };
 let observer = new IntersectionObserver(callback, {
-  threshold: [0.45], // If 50% of the element is in the screen, we count it!
+  threshold: [0.4], // If 50% of the element is in the screen, we count it!
   // Can change the thresholds based on your needs. The default is 0 - it'll run only when the element first comes into view
 });
 
