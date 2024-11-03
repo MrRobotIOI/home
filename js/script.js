@@ -200,6 +200,10 @@ function plusDivs2(n) {
 function showDivs2(n) {
   var ii;
   var x = document.querySelectorAll(".visible .project-carousel .desctext div");
+  if (x.length === 0) {
+    console.error("No elements found for selector: .visible .project-carousel .desctext div");
+    return;
+  }
   if (n > x.length) {
     slideIndex2 = 1;
   }
@@ -213,15 +217,18 @@ function showDivs2(n) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const topic = urlParams.get('topic');
-
+  let urlParams = new URLSearchParams(window.location.href);
+  let topic = urlParams.get('topic');
   if (topic) {
+
     const targetElement = document.getElementById(topic);
 
     if (targetElement) {
+      console.log(targetElement);
       window.scrollTo({
+        top: targetElement.offsetTop+(targetElement.offsetTop/2),
         behavior: "instant"
+
       });
     }
   }
