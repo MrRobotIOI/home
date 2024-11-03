@@ -76,7 +76,7 @@
                 </a>
                 <p style="font-family: 'Poppins', sans-serif;">
                     software developer <br>
-                    & technical game designer <br>
+                    & technical game designer/artist <br>
                     & university student
                 </p>
             </div>
@@ -84,7 +84,9 @@
     </section>
 
 
+
     <section id="projects">
+
         <div class="project-bkg">
             <div>
                 <div class="project-bkgimg"></div>
@@ -92,6 +94,168 @@
         </div>
 
         <div class="container">
+        <div class="project">
+            <h2>Insomnia</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Role: Lead developer <br>
+                    C# / Unity / Game Development
+                </p>
+
+                <p>
+                    Insomnia is a first-person 3d adventure game that uses aspects of time and space.
+                    As the player explores they get clues from "echoes",
+                    the souls of the dead. They use those clues to acquire keys, unlock the exit and end the game.
+                </p>
+                <div class="button">
+                    <a href="https://ketana.itch.io/insomnia" target="_blank">VIEW GAME</a>
+                </div>
+                <div class="button">
+                    <a href="https://github.com/itsket/DATT3701Project" target="_blank">VIEW ON GITHUB</a>
+                </div>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="img/startmenu.png" alt="screenshot of insomnia">
+
+                    <img src="img/tracking-turrets.gif" alt="screenshot of insomnia">
+                    <img src="https://mrrobotioi.github.io/home/vids/timing.gif" alt="screenshot of insomnia">
+                    <img src="https://mrrobotioi.github.io/home/vids/ghost_floors.gif" alt="screenshot of insomnia">
+                    <img src="https://mrrobotioi.github.io/home/vids/infinity.gif" alt="screenshot of insomnia">
+
+                    <img src="img/sketches.jpg" alt="screenshot of insomnia">
+                    <img src="img/sketches2.jpg" alt="screenshot of insomnia">
+                    <img src="img/insomnia-1.png" alt="screenshot of insomnia">
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                    </div>
+                    <div class="desctext wrapper">
+                        <div class="active desctitle" id="slide">Start Menu</div>
+
+                        <div id="slide">
+
+
+                            <p class="desctitle">Bullet Time Mechanic and Lock on Turrets</p>
+                            <p>
+                                The player can enter and exit bullet time to evade or move through platform obstacles.
+                                Lock-on turrets that move to chase the player. Since it uses Unity's delta time, the speed at
+                                which the turrets rotate towards the player can be adjusted regardless of if bullet time is activated.
+                            </p>
+
+
+
+                        </div>
+                        <div id="slide">
+                            <p class="desctitle">PLATFORM OBSTACLES</p>
+
+                            <p>Moving platforms that require the player to get the correct timing.</p>
+
+                        </div>
+                        <div id="slide">
+                            <p class="desctitle">GHOST FLOORS</p>
+
+                            <p> An obstacle that requires the player to follow an object
+                                that temporarily reveals floors. The speed at which the object moves on its path can be changed.
+                            </p>
+                        </div>
+                        <div id="slide">
+                            <p class="desctitle">TIME BUBBLE</p>
+
+                            <p> An obstacle that changes the velocity of objects that enter it including the player.</p>
+
+                        </div>
+
+                        <div class=" desctitle" id="slide">Sketches I made and details about the level design, gameplay and overall game flow</div>
+                        <div class=" desctitle" id="slide">Sketches I made and details about the game mechanics and obstacles</div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+        <div class="container">
+
+         <div class="project">
+            <h2>Newtonian Gravity</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    C++ / Unreal Engine / Game Development
+                </p>
+
+                <p>
+                    Developed a C++ component in UE5 that allows for customizable Newtonian gravity mechanics,
+                    enabling realistic player and object movement influenced by a gravitational force.
+                </p>
+                <p>
+                    Augmented UE5’s destruction system to allow for directional gravity on a geometry collections.
+                    Also created a flight system allowing users to transition from planet to space.
+                </p>
+
+                <div class="button">
+                    <a href="https://github.com/MrRobotIOI/Untitled-Project" target="_blank">VIEW ON GITHUB</a>
+                </div>
+            </div>
+             <div class="r-col">
+                 <div class="project-carousel">
+                     <img class="mySlides" src="img/UE5/grav.gif" style="width:100%">
+                     <video controls autoplay muted loop style="width: 100%">
+                         <source src="vids/DefaultBB.3032238.mp4" type="video/mp4">
+                         Your browser does not support the video tag.
+                     </video>
+                     <div class="carousel-arrows">
+                         <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                         <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                     </div>
+                 </div>
+             </div>
+        </div>
+        </div>
+
+        <div class="container">
+            <div class="project">
+                <h2>Procedural Snow System</h2>
+
+                <div class="l-col">
+                    <p class="subtitle">
+                        Snow Accumulation / Snow Deformation / Particle Collision
+                    </p>
+
+                    <p>
+                        <strong>Snow Accumulation:</strong> Allows for the accumulation of snow on specified meshes using a dynamic mesh, able to generate variation based on noise or displacement textures. Created an editor utility tool to convert it to a static mesh for exporting.
+                        A wind vector can also be added to give directional snow accumulation.
+                    </p>
+                    <p>
+                        <strong>Snow Deformation:</strong> Through real-time landscape deformation using render textures and runtime virtual textures that can be kept in memory.
+                    </p>
+                    <p>
+                        <strong>Particle Collision:</strong> Using GPU distance field allowing particles to collide with objects in the scene’s distance fields.
+                    </p>
+                </div>
+                <div class="r-col" style="overflow: visible">
+                    <div class="project-carousel">
+                        <img class="mySlides" src="img/UE5/snow/meshlevel2.png" style="width:100%">
+                        <img class="mySlides" src="img/UE5/snow/wireframe.png" style="width:100%">
+                        <img class="mySlides" src="img/UE5/snow/meshlevel1.png" style="width:100%">
+                        <img class="mySlides" src="img/UE5/snow/matlevel2.png" style="width:100%">
+                        <img class="mySlides" src="img/UE5/snow/matlevel1.png" style="width:100%">
+                        <img class="mySlides" src="img/UE5/snow/base.png" style="width:100%">
+
+                        <video controls autoplay muted loop>
+                            <source src="vids/Deformable_landscape.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="carousel-arrows">
+                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="project visible">
                 <h2>Marvel Snap GO</h2>
@@ -128,87 +292,7 @@
             </div>
 
 
-            <div class="project">
-                <h2>Insomnia</h2>
 
-                <div class="l-col">
-
-                    <p class="subtitle">
-                        Role: Lead developer <br>
-                        C# / Unity / Game Development
-                    </p>
-
-                    <p>
-                        Insomnia is a first-person 3d adventure game that uses aspects of time and space. 
-                        As the player explores they get clues from "echoes",
-                         the souls of the dead. They use those clues to acquire keys, unlock the exit and end the game.
-                    </p>
-                    <div class="button">
-                        <a href="https://ketana.itch.io/insomnia" target="_blank">VIEW GAME</a>
-                    </div>
-                    <div class="button">
-                        <a href="https://github.com/itsket/DATT3701Project" target="_blank">VIEW ON GITHUB</a>
-                    </div>
-                </div>
-                <div class="r-col">
-                    <div class="project-carousel">
-                        <img class="active" src="img/startmenu.png" alt="screenshot of insomnia">
-                       
-                        <img src="img/tracking-turrets.gif" alt="screenshot of insomnia">
-                        <img src="https://mrrobotioi.github.io/home/vids/timing.gif" alt="screenshot of insomnia">
-                        <img src="https://mrrobotioi.github.io/home/vids/ghost_floors.gif" alt="screenshot of insomnia">
-                        <img src="https://mrrobotioi.github.io/home/vids/infinity.gif" alt="screenshot of insomnia">
-                  
-                        <img src="img/sketches.jpg" alt="screenshot of insomnia">
-                        <img src="img/sketches2.jpg" alt="screenshot of insomnia">
-                        <img src="img/insomnia-1.png" alt="screenshot of insomnia">
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
-                        </div>
-                        <div class="desctext wrapper"> 
-                            <div class="active desctitle" id="slide">Start Menu</div>
-                          
-                            <div id="slide">
-                        
-                   
-                                <p class="desctitle">Bullet Time Mechanic and Lock on Turrets</p>
-                                <p>
-                                    The player can enter and exit bullet time to evade or move through platform obstacles. 
-                                    Lock-on turrets that move to chase the player. Since it uses Unity's delta time, the speed at 
-                                    which the turrets rotate towards the player can be adjusted regardless of if bullet time is activated.
-                                 </p>
-            
-                                
-                            
-                           </div> 
-                             <div id="slide">
-                                <p class="desctitle">PLATFORM OBSTACLES</p>
-
-                                <p>Moving platforms that require the player to get the correct timing.</p>
-
-                                </div>
-                            <div id="slide">
-                                <p class="desctitle">GHOST FLOORS</p>
-
-                               <p> An obstacle that requires the player to follow an object 
-                                that temporarily reveals floors. The speed at which the object moves on its path can be changed.
-                                 </p>
-                            </div>
-                            <div id="slide">
-                                <p class="desctitle">TIME BUBBLE</p>
-
-                                <p> An obstacle that changes the velocity of objects that enter it including the player.</p>
-
-                            </div>
-                           
-                            <div class=" desctitle" id="slide">Sketches I made and details about the level design, gameplay and overall game flow</div>
-                            <div class=" desctitle" id="slide">Sketches I made and details about the game mechanics and obstacles</div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <div class="project">
@@ -261,39 +345,13 @@
                 </div>
             </div>
 
-            <div class="project">
-                <h2>Newtonian Gravity</h2>
 
-                <div class="l-col">
 
-                    <p class="subtitle">
-                       C++ / Unreal Engine / Game Development
-                    </p>
 
-                    <p>
-                        Developed a C++ compoenent that allows for a customizable Newtonian gravity mechanics,
-                         enabling realistic player and object movement influenced by a gravitational force.
-                       
-                  
-                    <div class="button">
-                        <a href="https://github.com/MrRobotIOI/Untitled-Project" target="_blank">VIEW ON GITHUB</a>
-                    </div>
-                </div>
-                <div class="r-col">
-                    <div class="project-carousel">
-                    
-                        <img src="img/UE5/grav.gif" alt="screenshot of insomnia">
 
-                    
-                        <div class="desctext wrapper"> 
-                            <div class="active desctitle" id="slide">Gravity</div>
-                          
-                          
-                        </div>
-                    </div>
-                </div>
+
             </div>
-
+        <div class="container">
             <div class="project">
                 <h2>Wake</h2>
 
@@ -333,8 +391,9 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-
+        <div class="container">
             <div class="project">
                 <h2>Blight Souls</h2>
 
@@ -377,9 +436,9 @@
                     </div>
                 </div>
             </div>
+</div>
 
-
-
+        <div class="container">
             <div class="project">
                 <h2>GWENT Java</h2>
 
@@ -419,7 +478,7 @@
                     </div>
                 </div>
             </div>
-
+</div>
 
         </div>
     </section>
@@ -427,6 +486,10 @@
 
     <section id="about">
         <div class="container">
+            <h2>Experience</h2>
+            <h3>RBC Borealis (Data & AI Research Division, RBC) - Current</h3>
+            <p>Developer Co-op</p>
+
             <h2>Education</h2>
             <h3>York University - Current</h3>
             <p>

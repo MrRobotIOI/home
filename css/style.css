@@ -563,9 +563,11 @@ section.no-hero {
   border-radius: 3px 0 0 3px;
 }
 video {
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
-  padding-top: 20px;
+  padding-top: 0px;
+  aspect-ratio: 16 / 9;
+  overflow: visible;
 }
 
 @media screen and (max-width: 1200px) {
