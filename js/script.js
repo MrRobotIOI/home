@@ -211,3 +211,18 @@ function showDivs2(n) {
   }
   x[slideIndex2 - 1].classList.add("active");
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const topic = urlParams.get('topic');
+
+  if (topic) {
+    const targetElement = document.getElementById(topic);
+
+    if (targetElement) {
+      window.scrollTo({
+        behavior: "instant"
+      });
+    }
+  }
+});
