@@ -498,6 +498,7 @@ section .container,
 }
 .project.visible {
   opacity: 1;
+  overflow: scroll;
 }
 #projects,
 #projects .container {
