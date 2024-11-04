@@ -69,7 +69,16 @@ function topFunction() {
     function plusDivs(n) {
       showDivs((slideIndex += n));
     }
-
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+    }
     function showDivs(n) {
       var ii;
       var x = document.querySelectorAll("#div0 .project-carousel img");
@@ -176,6 +185,7 @@ function showDivs(n) {
   var ii;
   var x = document.querySelectorAll(".visible .project-carousel img");
   var x2 = document.querySelectorAll(".visible .project-carousel img .desctext");
+
   if (n > x.length) {
     slideIndex = 1;
   }
@@ -200,10 +210,7 @@ function plusDivs2(n) {
 function showDivs2(n) {
   var ii;
   var x = document.querySelectorAll(".visible .project-carousel .desctext div");
-  if (x.length === 0) {
-    console.error("No elements found for selector: .visible .project-carousel .desctext div");
-    return;
-  }
+
   if (n > x.length) {
     slideIndex2 = 1;
   }
@@ -215,6 +222,39 @@ function showDivs2(n) {
   }
   x[slideIndex2 - 1].classList.add("active");
 }
+
+
+
+//showDivs3(slideIndex3);
+
+function plusDivs3(n) {
+let Index3 = 0;
+  let x = document.querySelectorAll("#proceduralsnow .project-carousel img");
+
+
+for (let i = 0; i < x.length; i++) {
+  if (x.item(i).classList.contains("active")) {
+    x.item(i).classList.remove("active");
+    if (i + n < 0) {
+      Index3 = x.length - 1;
+      break;
+    }
+    else if (i + n >= x.length) {
+      Index3 = 0;
+      break;
+    }
+    else{
+
+        Index3 = i + n;
+      break;
+    }
+
+  }
+}
+x.item(Index3).classList.add("active");
+
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
   let urlParams = new URLSearchParams(window.location.href);
@@ -233,3 +273,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
