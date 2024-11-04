@@ -259,6 +259,9 @@ section .container {
   background-size: cover;
   opacity: 0.06;
 }
+.project .visible{
+  overflow: auto;
+}
 .project {
   height: 100vh;
   padding: 80px 0;
