@@ -193,6 +193,7 @@ section .container {
   width: 100%;
   max-width: 2100px;
   margin: 0 auto;
+  height: auto;
 }
 
 #home {
@@ -225,7 +226,7 @@ section .container {
 }
 #projects .container {
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 #projects h2 {
   color: #f49d38;
