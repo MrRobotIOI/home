@@ -9,91 +9,94 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
 <body>
-    <!--background columns-->
-    <div class="bkg">
-        <div></div>
-        <div></div>
-        <div></div>
+<!--background columns-->
+<div class="bkg">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<!--end background columns-->
+
+
+<header>
+    <div class="container">
+        <ul>
+            <li>
+                <button onclick="topFunction()" id="mybtn" class="btn" title="Back to top">
+                    Back to top
+                </button>
+            </li>
+            <li>
+                <a href="3dwork.html">3d work</a>
+            </li>
+            <li>
+                <a href="shaders.html">Shaders/Technical Art</a>
+            </li>
+            <li>
+                <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+                <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
+            </li>
+        </ul>
+        <ul class="email">
+            <li>
+                Contact me at <span>zimikejiani[at]gmail[dot]com</span>
+            </li>
+        </ul>
     </div>
-    <!--end background columns-->
+</header>
+
+<!--ignore, fixes overscroll issue-->
+<div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+<!--ignore-->
 
 
-    <header>
-        <div class="container">
-            <ul>
-                <li>
-                    <button onclick="topFunction()" id="mybtn" class="btn" title="Back to top">
-                        Back to top
-                    </button>
-                </li>
-                <li>
-                    <a href="3dwork.html">3d work</a>
-                </li>
-                <li>
-                    <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
-                </li>
-                <li>
-                    <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
-                </li>
-            </ul>
-            <ul class="email">
-                <li>
-                    Contact me at <span>zimikejiani[at]gmail[dot]com</span>
-                </li>
-            </ul>
+<section id="home">
+    <div class="container">
+        <p style="font-family: 'Poppins', sans-serif;">hi, i'm</p>
+        <h1>ZED <br>IKEJIANI</h1>
+        <div class="arrow-wrapper">
+            <a href="#projects" class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.601 127.375">
+                    <g id="Group_20" data-name="Group 20" transform="translate(-277.552 -921.771)">
+                        <path id="Path_26" data-name="Path 26" d="M6491.853,776.227v90"
+                              transform="translate(-6207 145.544)" fill="none" stroke="#f49d38" stroke-width="2" />
+                        <path id="Path_55" data-name="Path 55" d="M8838.813,2070.339l10.895-7.3-10.895-7.3Z"
+                              transform="translate(2347.891 -7800.561) rotate(90)" fill="#f49d38" />
+                    </g>
+                </svg>
+
+            </a>
+            <p style="font-family: 'Poppins', sans-serif;">
+                software developer <br>
+                & technical game designer/artist <br>
+                & university student
+            </p>
         </div>
-    </header>
-
-    <!--ignore, fixes overscroll issue-->
-    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
-    <!--ignore-->
+    </div>
+</section>
 
 
-    <section id="home">
-        <div class="container">
-            <p style="font-family: 'Poppins', sans-serif;">hi, i'm</p>
-            <h1>ZED <br>IKEJIANI</h1>
-            <div class="arrow-wrapper">
-                <a href="#projects" class="arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.601 127.375">
-                        <g id="Group_20" data-name="Group 20" transform="translate(-277.552 -921.771)">
-                            <path id="Path_26" data-name="Path 26" d="M6491.853,776.227v90"
-                                transform="translate(-6207 145.544)" fill="none" stroke="#f49d38" stroke-width="2" />
-                            <path id="Path_55" data-name="Path 55" d="M8838.813,2070.339l10.895-7.3-10.895-7.3Z"
-                                transform="translate(2347.891 -7800.561) rotate(90)" fill="#f49d38" />
-                        </g>
-                    </svg>
 
-                </a>
-                <p style="font-family: 'Poppins', sans-serif;">
-                    software developer <br>
-                    & technical game designer/artist <br>
-                    & university student
-                </p>
-            </div>
+<section id="projects">
+
+    <div class="project-bkg">
+        <div>
+            <div class="project-bkgimg"></div>
         </div>
-    </section>
+    </div>
 
-
-
-    <section id="projects">
-
-        <div class="project-bkg">
-            <div>
-                <div class="project-bkgimg"></div>
-            </div>
-        </div>
-
-        <div class="container" id="insomnia">
+    <div class="container" id="insomnia">
         <div class="project">
             <h2>Insomnia</h2>
 
@@ -175,10 +178,10 @@
                 </div>
             </div>
         </div>
-</div>
-        <div class="container" id="newtoniangravity">
+    </div>
+    <div class="container" id="newtoniangravity">
 
-         <div class="project" >
+        <div class="project" >
             <h2>Newtonian Gravity</h2>
 
             <div class="l-col">
@@ -200,381 +203,381 @@
                     <a href="https://github.com/MrRobotIOI/Untitled-Project" target="_blank">VIEW ON GITHUB</a>
                 </div>
             </div>
-             <div class="r-col">
-                 <div class="project-carousel">
-                     <img class="mySlides" src="img/UE5/grav.gif" style="width:100%">
-                     <video controls autoplay muted loop style="width: 100%">
-                         <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/DefaultBB.3032238.mp4" type="video/mp4">
-                         Your browser does not support the video tag.
-                     </video>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="mySlides" src="img/UE5/grav.gif" style="width:100%">
+                    <video controls autoplay muted loop style="width: 100%">
+                        <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/DefaultBB.3032238.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
-                 </div>
-             </div>
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
 
-        <div class="container" id="proceduralsnow" >
-            <div class="project">
-                <div class="l-col">
+    <div class="container" id="proceduralsnow" >
+        <div class="project">
+            <div class="l-col">
                 <h2>Procedural Snow System</h2>
 
-                    <p class="subtitle">
-                        Snow Accumulation / Snow Deformation / Particle Collision
-                    </p>
+                <p class="subtitle">
+                    Snow Accumulation / Snow Deformation / Particle Collision
+                </p>
 
-                    <p>
-                        <strong>Snow Accumulation:</strong> Allows for the accumulation of snow on specified meshes using a dynamic mesh, able to generate variation based on noise or displacement textures. Created an editor utility tool to convert it to a static mesh for exporting.
-                        A wind vector can also be added to give directional snow accumulation.
-                    </p>
-                    <p>
-                        <strong>Snow Deformation:</strong> Through real-time landscape deformation using render textures and runtime virtual textures that can be kept in memory.
-                    </p>
-                    <p>
-                        <strong>Particle Collision:</strong> Using GPU distance field allowing particles to collide with objects in the scene’s distance fields.
-                    </p>
-                </div>
-
-                <div class="r-col">
-                    <div class="project-carousel">
-                        <img class="active" src="img/UE5/snow/meshlevel2.png" style="width:100%">
-                        <img  src="img/UE5/snow/wireframe.png" style="width:100%">
-                        <img  src="img/UE5/snow/meshlevel1.png" style="width:100%">
-                        <img  src="img/UE5/snow/matlevel2.png" style="width:100%">
-                        <img  src="img/UE5/snow/matlevel1.png" style="width:100%">
-                        <img  src="img/UE5/snow/base.png" style="width:100%">
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs3(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs3(1)">&#10095;</button>
-                        </div>
-                        <video controls autoplay muted loop>
-                            <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/snow_deformation.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video controls autoplay muted loop>
-                            <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/Industrial_Junkyard_Vol1.0023.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video controls autoplay muted loop>
-                            <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/Deformable_landscape.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-
-
-                    </div>
-                </div>
-            </div>
+                <p>
+                    <strong>Snow Accumulation:</strong> Allows for the accumulation of snow on specified meshes using a dynamic mesh, able to generate variation based on noise or displacement textures. Created an editor utility tool to convert it to a static mesh for exporting.
+                    A wind vector can also be added to give directional snow accumulation.
+                </p>
+                <p>
+                    <strong>Snow Deformation:</strong> Through real-time landscape deformation using render textures and runtime virtual textures that can be kept in memory.
+                </p>
+                <p>
+                    <strong>Particle Collision:</strong> Using GPU distance field allowing particles to collide with objects in the scene’s distance fields.
+                </p>
             </div>
 
-            <div class="project visible">
-                <h2>Marvel Snap GO</h2>
-
-                <div class="l-col">
-
-                    <p class="subtitle">
-                     
-                        React / Next.js / C# .NET / Postgresql
-                    </p>
-
-
-                       <p>Developed a web application that features Marvel Snap cards and uses the Marvel Comics API. It uses a spawning system to generate random cards on a random co-ordinate within a specified radius on a map created with the Google Maps API. It also allows users to collect these cards and add them to their collection while they explore the real world.</p> 
-
-
-                    <div class="button">
-                        <a href="https://marvel-snap-go.vercel.app" target="_blank">VIEW WEBSITE</a>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="img/UE5/snow/meshlevel2.png" style="width:100%">
+                    <img  src="img/UE5/snow/wireframe.png" style="width:100%">
+                    <img  src="img/UE5/snow/meshlevel1.png" style="width:100%">
+                    <img  src="img/UE5/snow/matlevel2.png" style="width:100%">
+                    <img  src="img/UE5/snow/matlevel1.png" style="width:100%">
+                    <img  src="img/UE5/snow/base.png" style="width:100%">
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs3(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs3(1)">&#10095;</button>
                     </div>
-                </div>
-                <div class="r-col" >
-                    <div class="project-carousel" style="max-width: 250px;">
-                        <img class="active" style="max-width: 250px;"src="img/MSGO/map2.png" alt="screenshot of insomnia">
-                        <img src="img/MSGO/collection1.png" alt="screenshot of insomnia">
-                        <img src="img/MSGO/collection2.png" alt="screenshot of insomnia">
-                        <img src="img/MSGO/map3.png" alt="screenshot of insomnia">
-     
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+                    <video controls autoplay muted loop>
+                        <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/snow_deformation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls autoplay muted loop>
+                        <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/Industrial_Junkyard_Vol1.0023.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls autoplay muted loop>
+                        <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/Deformable_landscape.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
 
-
-
-
-            <div class="project">
-                <h2>Model Kit Database</h2>
-
-                <div class="l-col">
-
-                    <p class="subtitle">
-                        JavaScript / React / Vite / Node / Express / MongoDB / solo project
-                    </p>
-
-                    <p>
-                        Developed a website that displays a catalogue of Version Katoki (Ver. Ka) Gundam model kits.
-                        Each model kit has an info page containing a video about it and links to stores that sell it.
-                        Also has a display and UI optimized for mobile and desktop
-                        <br> The Front-End uses React, Vue, and Node.js and is deployed using GitHub pages. The backend
-                        uses MongoDB for the database and Node.js along with Express for the backend API. It is kept
-                        running by an AWS EC2 Instance.
-                        <br> Also used REST APIs like Google’s YouTube Data API and Maven dependencies via Java to
-                        gather data and input it into the MongoDB Database.
-                    </p>
-                    <div class="button">
-                        <a href="https://mrrobotioi.github.io/gundzero/" target="_blank">VIEW WEBSITE</a>
-                    </div>
-                    <div class="button">
-                        <a href="https://github.com/MrRobotIOI/gund-arm" target="_blank">SOURCE CODE (FRONT-END)</a>
-                    </div>
-                    <div class="button">
-                        <a href="https://github.com/MrRobotIOI/gund-arm-api" target="_blank">SOURCE CODE (BACK-END)</a>
-                    </div>
-                    <div class="button">
-                        <a href="https://github.com/MrRobotIOI/gund-helpers" target="_blank">Programs (Github)</a>
-                    </div>
-                </div>
-
-                <div class="r-col">
-                    <div class="project-carousel">
-
-                        <img class="active" src="https://mrrobotioi.github.io/home/img/desktop1.png"
-                            alt="screenshot of insomnia">
-                        <img src="https://mrrobotioi.github.io/home/img/mobile1.png" alt="screenshot of insomnia">
-                        <img src="https://mrrobotioi.github.io/home/img/desktop2.png" alt="screenshot of insomnia">
-
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-            </div>
-        <div class="container">
-            <div class="project">
-                <h2>Wake</h2>
-
-                <div class="l-col">
-
-                    <p class="subtitle">
-                        Unreal Engine / C++
-                    </p>
-
-                    <p>
-                        Wake is an adrenaline-pumping third-person parkour game set in a futuristic sci-fi world.
-                        Players must use WASD and Spacebar to run, jump, and navigate through a series of obstacles to
-                        reach the end platform. With abilities like boost, dash, and Antigravity, they can enhance their
-                        movement and control in the air. The game features various platform types and traps, including
-                        sinking red platforms, tilting blue platforms, and rotating trap floor platforms. Players can
-                        also wall run on green-lit walls for added agility. The ultimate goal is to reach the green goal
-                        platform to win the game.
-                    </p>
-                    <div class="button">
-                        <a href="https://mrrobotioi.itch.io/wake" target="_blank">VIEW GAME</a>
-                    </div>
-                </div>
-                <div class="r-col">
-                    <div class="project-carousel">
-
-                        <img src="img/running.png" alt="screenshot of Wake">
-                        <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTM2My5wbmc=/794x1000/udUmOg.png"
-                            alt="screenshot of Wake">
-                        <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTE5OC5wbmc=/794x1000/hH5A7e.png"
-                            alt="screenshot of Wake">
-
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" >
+        <div class="project visible">
+            <h2>Marvel Snap GO</h2>
 
-        <div class="container">
-            <div class="project">
-                <h2>Blight Souls</h2>
+            <div class="l-col">
 
-                <div class="l-col">
+                <p class="subtitle">
 
-                    <p class="subtitle">
-                        C# / Game Development
-                    </p>
+                    React / Next.js / C# .NET / Postgresql
+                </p>
 
-                    <p>
-                        Developed a side-scroller game called “Blight Souls” with C# using Unity. Made scripts for the
-                        behaviour of the player, objects, and NPCs (Non-playable characters). Each object and NPC along
-                        with the player have scripts giving them different functions, effects, and properties such as a
-                        health bar and power bar, dealing damage, powering up an ability, spawning an object, movement,
-                        speeding up or slowing down, and playing sounds and animations.
-                    </p>
-                    <div class="button">
-                        <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">VIEW GAME</a>
-                    </div>
-                    <div class="button">
-                        <a href="https://mrrobotioi.github.io/home/docs/blight-souls-documentation.pdf"
-                            target="_blank">VIEW DOCUMENTATION</a>
-                    </div>
-                </div>
-                <div class="r-col">
-                    <div class="project-carousel">
 
-                        <img class="active"
-                            src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI2MC5wbmc=/794x1000/OAZbDw.png"
-                            alt="screenshot of Blight Souls">
-                        <img src="img/blight-souls.gif" alt="screenshot of Blight Souls">
-                        <img src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI0MC5wbmc=/794x1000/L%2FvQgg.png"
-                            alt="screenshot of Blight Souls">
+                <p>Developed a web application that features Marvel Snap cards and uses the Marvel Comics API. It uses a spawning system to generate random cards on a random co-ordinate within a specified radius on a map created with the Google Maps API. It also allows users to collect these cards and add them to their collection while they explore the real world.</p>
 
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
 
-                    </div>
+                <div class="button">
+                    <a href="https://marvel-snap-go.vercel.app" target="_blank">VIEW WEBSITE</a>
                 </div>
             </div>
-</div>
+            <div class="r-col" >
+                <div class="project-carousel" style="max-width: 250px;">
+                    <img class="active" style="max-width: 250px;"src="img/MSGO/map2.png" alt="screenshot of insomnia">
+                    <img src="img/MSGO/collection1.png" alt="screenshot of insomnia">
+                    <img src="img/MSGO/collection2.png" alt="screenshot of insomnia">
+                    <img src="img/MSGO/map3.png" alt="screenshot of insomnia">
 
-        <div class="container">
-            <div class="project">
-                <h2>GWENT Java</h2>
-
-                <div class="l-col">
-
-                    <p class="subtitle">
-                        Java / OOP
-                    </p>
-
-                    <p>
-                        <p>Based on and implements some of the gameplay and mechanics from the GWENT mini-card game from the video game "The Witcher 3: The Wild Hunt”.</p>
-                        <p>It uses Java AWT components to render cards, the board and UI elements. Implements class relationships such as inheritance to make card variants, composition to give the board a card objects and an Ability interface to give unique abilities to cards that implement it.  </p>
-
-                     </p>
-                    <div class="button">
-                        <a href="https://github.com/MrRobotIOI/Gwent-Java" target="_blank">View on Github</a>
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
                     </div>
-                 
-                </div>
-                <div class="r-col">
-                    <div class="project-carousel">
 
-                        <img class="active"
-                            src="img/GWENT.gif"
-                            alt="screenshot of Blight Souls"
-                            style="max-width: 4000px;"
-                            >
-                            
-                       <img src="img/Gwent.png"
-                            alt="screenshot of Blight Souls">
-
-                        <div class="carousel-arrows">
-                            <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
-
-                    </div>
                 </div>
             </div>
-</div>
-
-        </div>
-    </section>
-
-
-    <section id="about">
-        <div class="container">
-            <h2>Experience</h2>
-            <h3>RBC Borealis (Data & AI Research Division, RBC) - Current</h3>
-            <p>Developer Co-op</p>
-
-            <h2>Education</h2>
-            <h3>York University - Current</h3>
-            <p>
-                I’m a Digital Media (Game Arts) student at York University. <a
-                    href="https://lassonde.yorku.ca/academics/digital-media" target="_blank">Digital Media</a> is a
-                program offered by the Lassonde school of engineering.
-            </p>
-            <p class="subtitle">
-                Courses
-            </p>
-            <p>
-                Object Oriented Programming-Java, Data Structures, Shell Scripting, Game & Web Development, 3d modelling
-            </p>
-
-            <h3>Sheridan College - Previous</h3>
-            <p>
-                Diploma in Computer Programming
-            </p>
-
-            <h2>Contact</h2>
-            <h3>zimikejiani[at]gmail[dot]com</h3>
-            <p>
-                I’m currently open to internship opportunities. Feel free to reach out!
-            </p>
-            <p>
-                <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
-                <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
-                <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
-            </p>
-        </div>
-    </section>
-
-
-    <div class="scrollbar">
-        <div onclick="currentDot(1)" class="dot active">
-            <a href="#"></a>
-        </div>
-        <div onclick="currentDot(2)" class="dot">
-            <a href="#projects"></a>
-        </div>
-        <div onclick="currentDot(3)" class="dot">
-            <a href="#about"></a>
         </div>
     </div>
 
 
-    <!--ignore, fixes overscroll issue-->
-    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
-    <!--ignore-->
+
+    <div class="container">
+        <div class="project">
+            <h2>Model Kit Database</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    JavaScript / React / Vite / Node / Express / MongoDB / solo project
+                </p>
+
+                <p>
+                    Developed a website that displays a catalogue of Version Katoki (Ver. Ka) Gundam model kits.
+                    Each model kit has an info page containing a video about it and links to stores that sell it.
+                    Also has a display and UI optimized for mobile and desktop
+                    <br> The Front-End uses React, Vue, and Node.js and is deployed using GitHub pages. The backend
+                    uses MongoDB for the database and Node.js along with Express for the backend API. It is kept
+                    running by an AWS EC2 Instance.
+                    <br> Also used REST APIs like Google’s YouTube Data API and Maven dependencies via Java to
+                    gather data and input it into the MongoDB Database.
+                </p>
+                <div class="button">
+                    <a href="https://mrrobotioi.github.io/gundzero/" target="_blank">VIEW WEBSITE</a>
+                </div>
+                <div class="button">
+                    <a href="https://github.com/MrRobotIOI/gund-arm" target="_blank">SOURCE CODE (FRONT-END)</a>
+                </div>
+                <div class="button">
+                    <a href="https://github.com/MrRobotIOI/gund-arm-api" target="_blank">SOURCE CODE (BACK-END)</a>
+                </div>
+                <div class="button">
+                    <a href="https://github.com/MrRobotIOI/gund-helpers" target="_blank">Programs (Github)</a>
+                </div>
+            </div>
+
+            <div class="r-col">
+                <div class="project-carousel">
+
+                    <img class="active" src="https://mrrobotioi.github.io/home/img/desktop1.png"
+                         alt="screenshot of insomnia">
+                    <img src="https://mrrobotioi.github.io/home/img/mobile1.png" alt="screenshot of insomnia">
+                    <img src="https://mrrobotioi.github.io/home/img/desktop2.png" alt="screenshot of insomnia">
+
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <script src="js/script.js"></script>
 
-    <script>
-        //nav sidebar indicators
-        let dotIndex = 1;
-        showDots(dotIndex);
 
-        function plusDots(n) {
-            showDots(dotIndex += n);
+
+    </div>
+    <div class="container">
+        <div class="project">
+            <h2>Wake</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Unreal Engine / C++
+                </p>
+
+                <p>
+                    Wake is an adrenaline-pumping third-person parkour game set in a futuristic sci-fi world.
+                    Players must use WASD and Spacebar to run, jump, and navigate through a series of obstacles to
+                    reach the end platform. With abilities like boost, dash, and Antigravity, they can enhance their
+                    movement and control in the air. The game features various platform types and traps, including
+                    sinking red platforms, tilting blue platforms, and rotating trap floor platforms. Players can
+                    also wall run on green-lit walls for added agility. The ultimate goal is to reach the green goal
+                    platform to win the game.
+                </p>
+                <div class="button">
+                    <a href="https://mrrobotioi.itch.io/wake" target="_blank">VIEW GAME</a>
+                </div>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+
+                    <img src="img/running.png" alt="screenshot of Wake">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTM2My5wbmc=/794x1000/udUmOg.png"
+                         alt="screenshot of Wake">
+                    <img src="https://img.itch.zone/aW1hZ2UvMjQyNTc0NS8xNDM1OTE5OC5wbmc=/794x1000/hH5A7e.png"
+                         alt="screenshot of Wake">
+
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="project">
+            <h2>Blight Souls</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    C# / Game Development
+                </p>
+
+                <p>
+                    Developed a side-scroller game called “Blight Souls” with C# using Unity. Made scripts for the
+                    behaviour of the player, objects, and NPCs (Non-playable characters). Each object and NPC along
+                    with the player have scripts giving them different functions, effects, and properties such as a
+                    health bar and power bar, dealing damage, powering up an ability, spawning an object, movement,
+                    speeding up or slowing down, and playing sounds and animations.
+                </p>
+                <div class="button">
+                    <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">VIEW GAME</a>
+                </div>
+                <div class="button">
+                    <a href="https://mrrobotioi.github.io/home/docs/blight-souls-documentation.pdf"
+                       target="_blank">VIEW DOCUMENTATION</a>
+                </div>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+
+                    <img class="active"
+                         src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI2MC5wbmc=/794x1000/OAZbDw.png"
+                         alt="screenshot of Blight Souls">
+                    <img src="img/blight-souls.gif" alt="screenshot of Blight Souls">
+                    <img src="https://img.itch.zone/aW1hZ2UvMTgzNTcwMy8xMDc3MjI0MC5wbmc=/794x1000/L%2FvQgg.png"
+                         alt="screenshot of Blight Souls">
+
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="project">
+            <h2>GWENT Java</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Java / OOP
+                </p>
+
+                <p>
+                <p>Based on and implements some of the gameplay and mechanics from the GWENT mini-card game from the video game "The Witcher 3: The Wild Hunt”.</p>
+                <p>It uses Java AWT components to render cards, the board and UI elements. Implements class relationships such as inheritance to make card variants, composition to give the board a card objects and an Ability interface to give unique abilities to cards that implement it.  </p>
+
+                </p>
+                <div class="button">
+                    <a href="https://github.com/MrRobotIOI/Gwent-Java" target="_blank">View on Github</a>
+                </div>
+
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+
+                    <img class="active"
+                         src="img/GWENT.gif"
+                         alt="screenshot of Blight Souls"
+                         style="max-width: 4000px;"
+                    >
+
+                    <img src="img/Gwent.png"
+                         alt="screenshot of Blight Souls">
+
+                    <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+
+
+<section id="about">
+    <div class="container">
+        <h2>Experience</h2>
+        <h3>RBC Borealis (Data & AI Research Division, Royal Bank of Canada) - Current</h3>
+        <p>Software Developer Co-op</p>
+
+        <h2>Education</h2>
+        <h3>York University - Current</h3>
+        <p>
+            I’m a Digital Media (Game Arts) student at York University. <a
+                href="https://lassonde.yorku.ca/academics/digital-media" target="_blank">Digital Media</a> is a
+            program offered by the Lassonde school of engineering.
+        </p>
+        <p class="subtitle">
+            Courses
+        </p>
+        <p>
+            Object Oriented Programming-Java, Data Structures, Shell Scripting, Game & Web Development, 3d modelling
+        </p>
+
+        <h3>Sheridan College - Previous</h3>
+        <p>
+            Diploma in Computer Programming
+        </p>
+
+        <h2>Contact</h2>
+        <h3>zimikejiani[at]gmail[dot]com</h3>
+        <p>
+            I’m currently open to internship opportunities. Feel free to reach out!
+        </p>
+        <p>
+            <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+            <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
+        </p>
+    </div>
+</section>
+
+
+<div class="scrollbar">
+    <div onclick="currentDot(1)" class="dot active">
+        <a href="#"></a>
+    </div>
+    <div onclick="currentDot(2)" class="dot">
+        <a href="#projects"></a>
+    </div>
+    <div onclick="currentDot(3)" class="dot">
+        <a href="#about"></a>
+    </div>
+</div>
+
+
+<!--ignore, fixes overscroll issue-->
+<div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+<!--ignore-->
+
+
+<script src="js/script.js"></script>
+
+<script>
+    //nav sidebar indicators
+    let dotIndex = 1;
+    showDots(dotIndex);
+
+    function plusDots(n) {
+        showDots(dotIndex += n);
+    }
+
+    function currentDot(n) {
+        showDots(dotIndex = n);
+    }
+    function showDots(n) {
+        let k;
+        let slides = document.querySelectorAll("section > .container");
+        let navdots = document.getElementsByClassName("dot");
+        if (n > slides.length) { dotIndex = 1 }
+        if (n < 1) { dotIndex = slides.length }
+        for (k = 0; k < navdots.length; k++) {
+            navdots[k].className = navdots[k].className.replace(" active", "");
         }
-
-        function currentDot(n) {
-            showDots(dotIndex = n);
-        }
-        function showDots(n) {
-            let k;
-            let slides = document.querySelectorAll("section > .container");
-            let navdots = document.getElementsByClassName("dot");
-            if (n > slides.length) { dotIndex = 1 }
-            if (n < 1) { dotIndex = slides.length }
-            for (k = 0; k < navdots.length; k++) {
-                navdots[k].className = navdots[k].className.replace(" active", "");
-            }
-            navdots[dotIndex - 1].className += " active";
-        }
-    </script>
+        navdots[dotIndex - 1].className += " active";
+    }
+</script>
 
 </body>
 

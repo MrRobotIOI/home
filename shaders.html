@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="hero-view">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zed Ikejiani, Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+    <!--background columns-->
+    <div class="bkg">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--end background columns-->
+
+
+    <header>
+        
+        <div class="container">
+            
+            <ul>
+                <li>
+                    <button onclick="topFunction()" id="mybtn" class="btn" title="Back to top">
+                        Back to top
+                    </button>
+                </li>
+                <li>
+                    <a href="3dwork.html">3d work</a>
+                </li>
+                <li>
+                    <a href="3dwork.html">Shaders/Technical Art</a>
+                </li>
+                <li>
+                    <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
+                </li>
+            </ul>
+            <ul class="email">
+                <li>
+                    Contact me at <span>zimikejiani[at]gmail[dot]com</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--ignore, fixes overscroll issue-->
+    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+    <!--ignore-->
+
+
+
+    <section id="projects">
+
+        <div class="project-bkg">
+            <div>
+                <div class="project-bkgimg"></div>
+            </div>
+        </div>
+
+        <div class="container" id="insomnia">
+        <div class="project">
+            <h2>Butterfly Flocking Simulation</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    HLSL / Unreal Engine / Game Development
+                </p>
+                <p>
+                    A butterfly flocking simulation that uses a boids algorithm. The boids are attracted to the player or a point of interest and
+                    avoid obstacles using distance fields. The player can also attract the boids to a specific location. A falloff is calculated by how close the boids are to each other and the point of interest giving a smoother force application.
+                <p>
+                    
+                    The boids(butterflies) use a grid based system, rather than lopping through every boid we just loops through the boids in the cells of the grid close to the current boid.
+                </p>
+
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="https://mrrobotioi.github.io/home/vids/boids_gif.gif" alt="screenshot of insomnia">
+                   <!-- <div class="carousel-arrows">
+                        <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                        <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                    </div>
+   -->
+                </div>
+            </div>
+        </div>
+</div>
+     
+
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="container">
+            <h2>Experience</h2>
+            <h3>RBC Borealis (Data & AI Research Division, Royal Bank of Canada) - Current</h3>
+            <p>Software Developer Co-op</p>
+
+            <h2>Education</h2>
+            <h3>York University - Current</h3>
+            <p>
+                I’m a Digital Media (Game Arts) student at York University. <a
+                    href="https://lassonde.yorku.ca/academics/digital-media" target="_blank">Digital Media</a> is a
+                program offered by the Lassonde school of engineering.
+            </p>
+            <p class="subtitle">
+                Courses
+            </p>
+            <p>
+                Object Oriented Programming-Java, Data Structures, Shell Scripting, Game & Web Development, 3d modelling
+            </p>
+
+            <h3>Sheridan College - Previous</h3>
+            <p>
+                Diploma in Computer Programming
+            </p>
+
+            <h2>Contact</h2>
+            <h3>zimikejiani[at]gmail[dot]com</h3>
+            <p>
+                I’m currently open to internship opportunities. Feel free to reach out!
+            </p>
+            <p>
+                <a href="https://github.com/MrRobotIOI" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/zed-ik/" target="_blank">LinkedIn</a>
+                <a href="docs/Zed_Ikejiani_Resume.pdf" target="_blank">Resume</a>
+            </p>
+        </div>
+    </section>
+
+
+    <div class="scrollbar">
+        <div onclick="currentDot(1)" class="dot active">
+            <a href="#"></a>
+        </div>
+        <div onclick="currentDot(2)" class="dot">
+            <a href="#projects"></a>
+        </div>
+        <div onclick="currentDot(3)" class="dot">
+            <a href="#about"></a>
+        </div>
+    </div>
+
+
+    <!--ignore, fixes overscroll issue-->
+    <div style="scroll-snap-align:none;height: 2px;min-height: 0;"> </div>
+    <!--ignore-->
+
+
+    <script src="js/script.js"></script>
+
+    <script>
+        //nav sidebar indicators
+        let dotIndex = 1;
+        showDots(dotIndex);
+
+        function plusDots(n) {
+            showDots(dotIndex += n);
+        }
+
+        function currentDot(n) {
+            showDots(dotIndex = n);
+        }
+        function showDots(n) {
+            let k;
+            let slides = document.querySelectorAll("section > .container");
+            let navdots = document.getElementsByClassName("dot");
+            if (n > slides.length) { dotIndex = 1 }
+            if (n < 1) { dotIndex = slides.length }
+            for (k = 0; k < navdots.length; k++) {
+                navdots[k].className = navdots[k].className.replace(" active", "");
+            }
+            navdots[dotIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
