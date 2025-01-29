@@ -132,13 +132,16 @@ header {
   right: 0;
   z-index: 100;
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 header .container {
+  background-color: #0c0f16;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  border-radius: 10px;
 }
 header ul {
   display: inline;
@@ -357,31 +360,31 @@ section .container {
   display: block;
 }
 .wrapper {
-    position: relative;
-    overflow: hidden;
-    width:auto;
-    height: 200px; 
-    border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  width:auto;
+  height: 200px;
+  border: 1px solid black;
 }
 
 #slide {
-    position: absolute;
-    left: -500px;
-    opacity: 0;
-   
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: .0s;
-    animation: slide 0.5s forwards;
-    animation-delay: 0.0s;
+  position: absolute;
+  left: -500px;
+  opacity: 0;
+
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: .0s;
+  animation: slide 0.5s forwards;
+  animation-delay: 0.0s;
 }
 
 @-webkit-keyframes slide {
-  
+
   0% { opacity: 0.1; }
   70% { opacity: 0.3; }
   80% { opacity: 0.6; }
   90% { opacity: 0.8; }
-    100% { left: 0; opacity: 1;}
+  100% { left: 0; opacity: 1;}
 }
 
 @keyframes slide {
@@ -654,7 +657,7 @@ video {
     max-height: 100%;
     overflow: hidden;
   }
- 
+
   .project,
   #about {
     padding: 95px 0;
