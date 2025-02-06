@@ -667,6 +667,6 @@ video {
 @media screen and (min-height: 500px) and (max-height: 1500px) {
   .project {
     height: unset;
-    min-height: 100vh;
+    min-height: 50vh;
   }
 }
