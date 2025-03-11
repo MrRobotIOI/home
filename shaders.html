@@ -76,7 +76,66 @@
             <div class="project-bkgimg"></div>
         </div>
     </div>
+    <div class="container">
+        <div class="project">
+            <h2>Volumetric Raymarched Clouds</h2>
 
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Unreal Engine / Game Development / WIP
+                </p>
+                <p>
+                    Developed Volumetric Clouds using raymarching. This allows for the ability to fly thorugh clouds. The clouds are generated using a Pseudo 3D noise texture(A 2d Texture storing 3d Noise) and a raymarching shader. The clouds are also affected by the sun's position and the time of day.</p>
+                <p>Also Developed Texture authoring tools to control clouds fade in and onut and postion within a volume (cube/sphere)</p>
+                <p>Working on implementiong an oversimplified shadow system and reducing banding artifacts(currently using noise, specifically bayer noise to offset said artifacts)</p>
+                
+                
+
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/clouds.gif" alt="gif">
+                    <!-- <div class="carousel-arrows">
+                         <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                         <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                     </div>
+    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container">
+            <div class="project">
+                <h2>Chain Simulation (GPU Niagara Based)</h2>
+
+                <div class="l-col">
+
+                    <p class="subtitle">
+                        Unreal Engine / Niagara / Game Development / WIP
+                    </p>
+                    <p>
+                        A Niagara based chain/cable simluation that uses a chain link hierarchy so each chain link maintains its position and orientation relative to the chain link above and below it</p>
+                    <p>Works with sprites ribbons and meshes. Currently working on implementing collision.</p>
+
+
+
+                </div>
+                <div class="r-col">
+                    <div class="project-carousel">
+                        <img class="active" src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/wind_workflow.gif" alt="gif">
+                        <!-- <div class="carousel-arrows">
+                             <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                             <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                         </div>
+        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+            
     <div class="container">
         <div class="project" >
             <h2>Butterfly Flocking Simulation</h2>
@@ -112,16 +171,22 @@
 
     <div class="container" >
         <div class="project">
-            <h2>Procedural Snow</h2>
+            <h2>Real-time Deformable Snow  and Procedural Snow Generation</h2>
 
             <div class="l-col">
 
                 <p class="subtitle">
-                    Unreal Engine / Game Development
+                    Unreal Engine / Game Development / Vertex Shaders / WIP
                 </p>
                 <p>
+                    A real-time deformable snow system that uses vertex shaders to deform the snow mesh based on the player's position and movement requiring a tesselated or high poly mesh.
+                    Had a lot of funs and learned a lot while making this.
+                </p>
+                
+                <p>
                     Developed a Procedural Snow System featuring a customizable accumulation system at both the material (shader-based) and mesh
-                    levels, leveraging layered noise and displacement textures for realistic variation
+                    levels(using UE dynamic meshes), leveraging layered noise and displacement textures for realistic variation
+                </p>
        
             </div>
             <div class="r-col">
@@ -230,6 +295,35 @@
 
 
     </div>
+
+    <div class="container">
+        <div class="project">
+            <h2>Object Materialize</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Unreal Engine / Game Development
+                </p>
+                <p>
+                    A quick weapon materialize shader I made to get a better understanding of  creating and manipulating alpha masks the material editor in Unreal Engine.
+
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/spatter_workflow.gif" alt="gif">
+                    <!-- <div class="carousel-arrows">
+                         <button class="arrow-l" onclick="plusDivs(-1), plusDivs2(-1)">&#10094;</button>
+                         <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
+                     </div>
+    -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
 </section>
 
 
