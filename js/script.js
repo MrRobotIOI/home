@@ -177,9 +177,23 @@ list.forEach((d) => {
 var slideIndex = 1;
 showDivs(slideIndex);
 
+var carouselAutoInterval;
+
+function resetCarouselAutoAdvance() {
+  clearInterval(carouselAutoInterval);
+  carouselAutoInterval = setInterval(function () {
+    var x = document.querySelectorAll(".visible .project-carousel img");
+    if (x && x.length > 1) plusDivs(1);
+  }, 2000);
+}
+
 function plusDivs(n) {
   showDivs((slideIndex += n));
+  resetCarouselAutoAdvance();
 }
+
+// start carousel auto-advance (pauses/resets when user uses arrows)
+resetCarouselAutoAdvance();
 
 function showDivs(n) {
   var ii;
@@ -196,6 +210,9 @@ function showDivs(n) {
     x[ii].classList.remove("active");
   }
   x[slideIndex - 1].classList.add("active");
+  // keep description text in sync with image (e.g. Insomnia)
+  slideIndex2 = slideIndex;
+  showDivs2(slideIndex2);
 }
 
 //make carousel image text visible when in viewport
@@ -228,7 +245,8 @@ function showDivs2(n) {
 //showDivs3(slideIndex3);
 
 function plusDivs3(n) {
-let Index3 = 0;
+  if (typeof resetCarouselAutoAdvance === 'function') resetCarouselAutoAdvance();
+  let Index3 = 0;
   let x = document.querySelectorAll("#proceduralsnow .project-carousel img");
 
 
