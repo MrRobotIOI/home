@@ -105,6 +105,34 @@
         </div>
     </div>
 
+    <div class="project-grid">
+    <div class="container" id="timeline-of-technology">
+        <div class="project">
+            <h2>Timeline of Technology</h2>
+
+            <div class="l-col">
+                <p class="subtitle">
+                    Unity / C# / Game Development
+                </p>
+
+                <div class="desc-body">
+                <p>
+                    A 3D narrative-driven exploration game set in a post-collapse Museum of Human Achievement.
+                    Players crash-land on Earth and must recover technological artifacts from different historical eras to repair their spacecraft and escape.
+                </p>
+                <p>
+                    Built the repair minigames (welding, laser redirection, satellite repositioning) and integrated systems developed across the team into a cohesive experience. Team of 5. Capstone project.
+                </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="img/TIT_Gameplay.gif" alt="Timeline of Technology gameplay">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container" id="insomnia">
         <div class="project">
             <h2>Insomnia</h2>
@@ -116,11 +144,14 @@
                     C# / Unity / Game Development
                 </p>
 
+                <div class="desc-body">
                 <p>
                     Insomnia is a first-person 3d adventure game that uses aspects of time and space.
                     As the player explores they get clues from "echoes",
                     the souls of the dead. They use those clues to acquire keys, unlock the exit and end the game.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
                 <div class="button">
                     <a href="https://ketana.itch.io/insomnia" target="_blank">VIEW GAME</a>
                 </div>
@@ -130,24 +161,21 @@
             </div>
             <div class="r-col">
                 <div class="project-carousel">
-                    <img class="active" src="img/startmenu.png" alt="screenshot of insomnia">
-
-                    <img src="img/tracking-turrets.gif" alt="screenshot of insomnia">
+                    <img class="active" src="img/tracking-turrets.gif" alt="screenshot of insomnia">
                     <img src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/timing.gif" alt="screenshot of insomnia">
                     <img src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/ghost_floors.gif" alt="screenshot of insomnia">
                     <img src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/infinity.gif" alt="screenshot of insomnia">
 
+                    <img src="img/startmenu.png" alt="screenshot of insomnia">
                     <img src="img/sketches.jpg" alt="screenshot of insomnia">
                     <img src="img/sketches2.jpg" alt="screenshot of insomnia">
                     <img src="img/insomnia-1.png" alt="screenshot of insomnia">
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
                     <div class="desctext wrapper">
-                        <div class="active desctitle" id="slide">Start Menu</div>
-
-                        <div id="slide">
+                        <div class="active desctitle" id="slide">
 
 
                             <p class="desctitle">Bullet Time Mechanic and Lock on Turrets</p>
@@ -199,6 +227,7 @@
                     C++ / Unreal Engine / Game Development
                 </p>
 
+                <div class="desc-body">
                 <p>
                     Developed a C++ component in UE5 that allows for customizable Newtonian gravity mechanics,
                     enabling realistic player and object movement influenced by a gravitational force.
@@ -207,6 +236,8 @@
                     Augmented UE5’s destruction system to allow for directional gravity on a geometry collections.
                     Also created a flight system allowing users to transition from planet to space.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
 
                 <div class="button">
                     <a href="https://github.com/MrRobotIOI/Untitled-Project" target="_blank">VIEW ON GITHUB</a>
@@ -214,7 +245,7 @@
             </div>
             <div class="r-col">
                 <div class="project-carousel">
-                    <img class="mySlides" src="img/UE5/grav.gif" style="width:100%">
+                    <img class="active" src="img/UE5/grav.gif" style="width:100%">
                     <video controls autoplay muted loop style="width: 100%">
                         <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/DefaultBB.3032238.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -226,7 +257,7 @@
     </div>
 
     <div class="container" id="proceduralsnow" >
-        <div class="project visible">
+        <div class="project">
             <div class="l-col">
                 <h2>Procedural Snow System</h2>
 
@@ -234,6 +265,7 @@
                     Snow Accumulation / Snow Deformation / Particle Collision
                 </p>
 
+                <div class="desc-body">
                 <p>
                     <strong>Snow Accumulation:</strong> Allows for the accumulation of snow on specified meshes using a dynamic mesh, able to generate variation based on noise or displacement textures. Created an editor utility tool to convert it to a static mesh for exporting.
                     A wind vector can also be added to give directional snow accumulation.
@@ -244,6 +276,8 @@
                 <p>
                     <strong>Particle Collision:</strong> Using GPU distance field allowing particles to collide with objects in the scene’s distance fields.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
 
             <div class="r-col">
@@ -255,8 +289,8 @@
                     <img  src="img/UE5/snow/matlevel1.png" style="width:100%">
                     <img  src="img/UE5/snow/base.png" style="width:100%">
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs3(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs3(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
                     <video controls autoplay muted loop>
                         <source src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/snow_deformation.mp4" type="video/mp4">
@@ -283,6 +317,7 @@
                     Next.js 14 / TypeScript / globe.gl / Python FastAPI
                 </p>
 
+                <div class="desc-body">
                 <p>An interactive 3D globe visualization showing global greenhouse gas emissions. Built with Next.js 14, TypeScript, globe.gl, and a Python FastAPI backend.</p>
                 <p><strong>Features:</strong></p>
                 <ul>
@@ -292,6 +327,8 @@
                     <li><strong>Scientific Data</strong> – Based on validated climate research</li>
                 </ul>
                 <p>Full-stack architecture: Next.js frontend with Python FastAPI backend.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
 
                 <div class="button">
                     <a href="https://mrrobotioi.github.io/climate-globe/" target="_blank">VIEW WEBSITE</a>
@@ -306,8 +343,8 @@
                     <img src="img/climate_globe/globe2.png" alt="Climate Globe - climate data layers">
                     <img src="img/climate_globe/globe3.jpg" alt="Climate Globe - global view" style="max-width: 280px;">
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
                 </div>
             </div>
@@ -325,9 +362,12 @@
                     Visual Novel / Action / Experimental Gameplay
                 </p>
 
+                <div class="desc-body">
                 <p>
                     A rhythm-of-choices visual novel where dialogue runs in real time. Input arrow-key combos before the timer runs out to lock in your response. A love story under pressure—no idle clicking, with heart-racing interaction and split-second choices. Team submission for DATT 4300: Experimental Gameplay (2025). Co-created with rxx09, Phoebe Nguyen, and team.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
                 <div class="button">
                     <a href="https://rxx09.itch.io/super-dokidoki" target="_blank">PLAY ON ITCH.IO</a>
                 </div>
@@ -341,8 +381,8 @@
                     <img src="https://img.itch.zone/aW1hZ2UvMzk4MTI5Ni8yNDM0MDg0NC5wbmc=/original/6DCWZ0.png" alt="Super DokiDoki">
                     <img src="https://img.itch.zone/aW1hZ2UvMzk4MTI5Ni8yNDM0MDg0NS5wbmc=/original/nNS9yG.png" alt="Super DokiDoki">
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
                 </div>
             </div>
@@ -359,9 +399,12 @@
                     Puzzle / 2D / Experimental Gameplay
                 </p>
 
+                <div class="desc-body">
                 <p>
                     A puzzle game about precision and chaos. Use the mouse to tilt, lean, and bow your character—every degree counts. Find the exact angle to survive wacky scenarios where your reputation (and sometimes your life) depends on it. Team submission for DATT 4300: Experimental Gameplay (2025). Co-created with rxx09, Phoebe Nguyen, and team.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
                 <div class="button">
                     <a href="https://rxx09.itch.io/super-bow" target="_blank">PLAY ON ITCH.IO</a>
                 </div>
@@ -375,7 +418,7 @@
     </div>
 
     <div class="container" >
-        <div class="project visible">
+        <div class="project">
             <h2>Marvel Snap GO</h2>
 
             <div class="l-col">
@@ -386,8 +429,10 @@
                 </p>
 
 
+                <div class="desc-body">
                 <p>Developed a web application that features Marvel Snap cards and uses the Marvel Comics API. It uses a spawning system to generate random cards on a random co-ordinate within a specified radius on a map created with the Google Maps API. It also allows users to collect these cards and add them to their collection while they explore the real world.</p>
-
+                </div>
+                <button class="desc-toggle">More ↓</button>
 
                 <div class="button">
                     <a href="https://marvel-snap-go.vercel.app" target="_blank">VIEW WEBSITE</a>
@@ -401,8 +446,8 @@
                     <img src="img/MSGO/map3.png" alt="screenshot of insomnia">
 
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
 
                 </div>
@@ -420,6 +465,7 @@
                     JavaScript / React / Vite / Node / Express / MongoDB / solo project
                 </p>
 
+                <div class="desc-body">
                 <p>
                     Developed a website that displays a catalogue of Version Katoki (Ver. Ka) Gundam model kits.
                     Each model kit has an info page containing a video about it and links to stores that sell it.
@@ -430,6 +476,8 @@
                     <br> Also used REST APIs like Google’s YouTube Data API and Maven dependencies via Java to
                     gather data and input it into the MongoDB Database.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
                 <div class="button">
                     <a href="https://mrrobotioi.github.io/gundzero/" target="_blank">VIEW WEBSITE</a>
                 </div>
@@ -453,8 +501,8 @@
                     <img src="https://mrrobotioi.github.io/home/img/desktop2.png" alt="screenshot of insomnia">
 
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
 
                 </div>
@@ -462,11 +510,6 @@
         </div>
     </div>
 
-
-
-
-
-    </div>
     <div class="container">
         <div class="project">
             <h2>Wake</h2>
@@ -477,6 +520,7 @@
                     Unreal Engine / C++
                 </p>
 
+                <div class="desc-body">
                 <p>
                     Wake is an adrenaline-pumping third-person parkour game set in a futuristic sci-fi world.
                     Players must use WASD and Spacebar to run, jump, and navigate through a series of obstacles to
@@ -486,6 +530,8 @@
                     also wall run on green-lit walls for added agility. The ultimate goal is to reach the green goal
                     platform to win the game.
                 </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
                 <div class="button">
                     <a href="https://mrrobotioi.itch.io/wake" target="_blank">VIEW GAME</a>
                 </div>
@@ -500,8 +546,8 @@
                          alt="screenshot of Wake">
 
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
 
                 </div>
@@ -519,6 +565,7 @@
                     C# / Game Development
                 </p>
 
+                <div class=”desc-body”>
                 <p>
                     Developed a side-scroller game called “Blight Souls” with C# using Unity. Made scripts for the
                     behaviour of the player, objects, and NPCs (Non-playable characters). Each object and NPC along
@@ -526,8 +573,10 @@
                     health bar and power bar, dealing damage, powering up an ability, spawning an object, movement,
                     speeding up or slowing down, and playing sounds and animations.
                 </p>
-                <div class="button">
-                    <a href="https://mrrobotioi.itch.io/blight-souls" target="_blank">VIEW GAME</a>
+                </div>
+                <button class=”desc-toggle”>More ↓</button>
+                <div class=”button”>
+                    <a href=”https://mrrobotioi.itch.io/blight-souls” target=”_blank”>VIEW GAME</a>
                 </div>
                 <div class="button">
                     <a href="https://mrrobotioi.github.io/home/docs/blight-souls-documentation.pdf"
@@ -545,8 +594,8 @@
                          alt="screenshot of Blight Souls">
 
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
 
                 </div>
@@ -564,12 +613,12 @@
                     Java / OOP
                 </p>
 
-                <p>
-                <p>Based on and implements some of the gameplay and mechanics from the GWENT mini-card game from the video game "The Witcher 3: The Wild Hunt”.</p>
-                <p>It uses Java AWT components to render cards, the board and UI elements. Implements class relationships such as inheritance to make card variants, composition to give the board a card objects and an Ability interface to give unique abilities to cards that implement it.  </p>
-
-                </p>
-                <div class="button">
+                <div class=”desc-body”>
+                <p>Based on and implements some of the gameplay and mechanics from the GWENT mini-card game from the video game “The Witcher 3: The Wild Hunt”.</p>
+                <p>It uses Java AWT components to render cards, the board and UI elements. Implements class relationships such as inheritance to make card variants, composition to give the board a card objects and an Ability interface to give unique abilities to cards that implement it.</p>
+                </div>
+                <button class=”desc-toggle”>More ↓</button>
+                <div class=”button”>
                     <a href="https://github.com/MrRobotIOI/Gwent-Java" target="_blank">View on Github</a>
                 </div>
 
@@ -587,8 +636,8 @@
                          alt="screenshot of Blight Souls">
 
                     <div class="carousel-arrows">
-                        <button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="arrow-r" onclick="plusDivs(1)">&#10095;</button>
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
                     </div>
 
                 </div>
@@ -643,13 +692,13 @@
 
 
 <div class="scrollbar">
-    <div onclick="currentDot(1)" class="dot active">
+    <div class="dot active">
         <a href="#"></a>
     </div>
-    <div onclick="currentDot(2)" class="dot">
+    <div class="dot">
         <a href="#projects"></a>
     </div>
-    <div onclick="currentDot(3)" class="dot">
+    <div class="dot">
         <a href="#about"></a>
     </div>
 </div>
@@ -662,30 +711,6 @@
 
 <script src="js/script.js"></script>
 
-<script>
-    //nav sidebar indicators
-    let dotIndex = 1;
-    showDots(dotIndex);
-
-    function plusDots(n) {
-        showDots(dotIndex += n);
-    }
-
-    function currentDot(n) {
-        showDots(dotIndex = n);
-    }
-    function showDots(n) {
-        let k;
-        let slides = document.querySelectorAll("section > .container");
-        let navdots = document.getElementsByClassName("dot");
-        if (n > slides.length) { dotIndex = 1 }
-        if (n < 1) { dotIndex = slides.length }
-        for (k = 0; k < navdots.length; k++) {
-            navdots[k].className = navdots[k].className.replace(" active", "");
-        }
-        navdots[dotIndex - 1].className += " active";
-    }
-</script>
 
 </body>
 
