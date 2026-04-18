@@ -4,6 +4,18 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+// Update background image on project card hover
+var thumbnail = document.querySelector('.project-bkgimg');
+if (thumbnail) {
+  document.querySelectorAll('.project-grid .project').forEach(function(project) {
+    var img = project.querySelector('.project-carousel img');
+    if (!img) return;
+    project.addEventListener('mouseenter', function() {
+      thumbnail.style.backgroundImage = 'url(' + img.src + ')';
+    });
+  });
+}
+
 // Per-carousel navigation — each carousel manages its own index
 document.querySelectorAll('.project-carousel').forEach(function(carousel) {
   var imgs = Array.from(carousel.querySelectorAll(':scope > img'));
@@ -33,8 +45,14 @@ document.querySelectorAll('.project-carousel').forEach(function(carousel) {
 document.querySelectorAll('.desc-toggle').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var body = btn.previousElementSibling;
-    body.classList.toggle('expanded');
-    btn.textContent = body.classList.contains('expanded') ? 'Less ↑' : 'More ↓';
+    var project = btn.closest('.project');
+    var expanded = body.classList.toggle('expanded');
+    if (project) {
+      project.querySelectorAll('.preview-extra').forEach(function(extra) {
+        extra.classList.toggle('is-visible', expanded);
+      });
+    }
+    btn.textContent = expanded ? 'Less ↑' : 'More ↓';
   });
 });
 

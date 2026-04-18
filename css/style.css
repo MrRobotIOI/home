@@ -14,6 +14,7 @@ html {
 html,
 body {
   width: 100%;
+  overflow-x: clip;
 }
 html {
   scroll-snap-type: none;
@@ -233,26 +234,30 @@ section .container {
 }
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 0.9rem;
-  padding: 5rem 5% 2rem;
+  width: min(2100px, 100%);
+  padding: 5rem clamp(16px, 3vw, 40px) 2rem;
   max-width: 2100px;
   margin: 0 auto;
+  overflow-x: clip;
 }
 .project-grid > .container {
   padding: 0;
   max-width: none;
+  min-width: 0;
 }
 .project-grid .project {
   height: auto;
   min-height: unset;
   padding: 0.85rem;
-  overflow: visible;
+  overflow: hidden;
   opacity: 1;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .project-grid h2 {
   font-size: 1.4em;
@@ -279,22 +284,87 @@ section .container {
 }
 .project-grid .r-col {
   order: -1;
-  margin-bottom: 0.4rem;
-}
-.project-grid .project-carousel {
-  max-height: 200px;
+  margin: 0 0 0.5rem;
   overflow: hidden;
 }
+.project-grid .preview-extra {
+  display: none;
+  order: 2;
+  margin-top: 0.25rem;
+}
+.project-grid .preview-extra.is-visible {
+  display: block;
+}
+.project-grid .project-carousel {
+  height: 260px;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+  clip-path: inset(0 round 8px);
+}
+.project-grid .project-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  border-radius: inherit;
+}
+.project-grid .project-carousel img.active {
+  display: block;
+  border-radius: inherit;
+  clip-path: inset(0 round 8px);
+}
 .project-grid .project-carousel:has(iframe) {
-  max-height: none;
-  overflow: visible;
+  height: auto;
+  overflow: hidden;
+}
+.project-grid .project-carousel iframe,
+.project-grid .project-carousel video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: inherit;
+  clip-path: inset(0 round 8px);
+}
+@media screen and (max-width: 500px) {
+  .project-grid .project-carousel {
+    height: 200px;
+  }
+}
+.project-grid .desc-body {
+  max-height: 0;
+}
+.project-grid .desc-body::after {
+  display: none;
+}
+.project-grid .desc-body.expanded {
+  max-height: 800px;
+}
+.project-grid .button {
+  display: none;
+}
+.project-grid .desc-body.expanded ~ .button {
+  display: block;
+}
+.project-grid .preview-extra .project-carousel {
+  margin-top: 0;
+}
+.project-grid h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project-grid .subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .project-grid .button a {
   margin-top: 14px;
 }
 @media screen and (max-width: 960px) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
     padding: 5rem 3% 1.5rem;
   }
@@ -309,9 +379,6 @@ section .container {
   }
   .project-grid h2 {
     font-size: 1.15em;
-  }
-  .project-grid .project-carousel {
-    max-height: 150px;
   }
 }
 .project-bkg {
@@ -338,7 +405,14 @@ section .container {
   background-image: url("../img/insomnia-1.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   opacity: 0.06;
+}
+section:has(.project-grid) .project-bkg {
+  width: 100%;
+  left: 0;
+  right: auto;
+  top: 0;
 }
 .project .visible{
   overflow: auto;
@@ -623,6 +697,10 @@ section .container,
 #projects,
 #projects .container {
   height: unset;
+  overflow: visible;
+}
+section:has(.project-grid) {
+  overflow: visible;
 }
 .fixed .project-bkg {
   position: fixed;
