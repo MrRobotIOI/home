@@ -227,14 +227,54 @@ section .container {
 #projects {
   position: relative;
 }
-#projects .container {
-  height: 100vh;
-  overflow: auto;
-}
 #projects h2 {
   color: #f49d38;
-  margin: 0 0;
-  margin-top: 50px;
+  margin: 0 0 8px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 5rem 7% 3rem;
+  max-width: 2100px;
+  margin: 0 auto;
+}
+.project-grid > .container {
+  padding: 0;
+  max-width: none;
+}
+.project-grid .project {
+  height: auto;
+  min-height: unset;
+  padding: 1.25rem;
+  overflow: visible;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.project-grid .l-col,
+.project-grid .r-col {
+  width: 100%;
+  display: block;
+  margin-left: 0;
+}
+.project-grid .r-col {
+  order: -1;
+  margin-bottom: 0.5rem;
+}
+.project-grid .project-carousel {
+  max-height: 280px;
+  overflow: hidden;
+}
+.project-grid .button a {
+  margin-top: 20px;
+}
+@media screen and (max-width: 960px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .project-bkg {
   height: 100%;
@@ -409,6 +449,45 @@ section .container {
 }
 .project-carousel button:hover {
   color: #f49d38;
+}
+
+.desc-body {
+  position: relative;
+  max-height: 90px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.desc-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, #121621);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.desc-body.expanded {
+  max-height: 800px;
+}
+.desc-body.expanded::after {
+  opacity: 0;
+}
+.desc-toggle {
+  background: none;
+  color: #f49d38;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 0;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.desc-toggle:hover {
+  color: #fff;
 }
 
 #about {
