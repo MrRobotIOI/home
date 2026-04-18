@@ -267,6 +267,15 @@ section .container {
 .project-grid .project-carousel {
   max-height: 280px;
   overflow: hidden;
+  border-radius: 8px;
+  clip-path: inset(0 round 8px);
+}
+.project-grid .project-carousel img,
+.project-grid .project-carousel iframe,
+.project-grid .project-carousel video {
+  border-radius: inherit;
+  clip-path: inset(0 round 8px);
+  vertical-align: top;
 }
 .project-grid .button a {
   margin-top: 20px;
