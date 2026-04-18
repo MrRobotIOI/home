@@ -76,6 +76,8 @@
             <div class="project-bkgimg"></div>
         </div>
     </div>
+
+    <div class="project-grid">
     <div class="container">
         <div class="project">
             <h2>Sci-fi Camp Scene</h2>
@@ -85,8 +87,8 @@
                 <p class="subtitle">
                     Unreal Engine / Niagara
                 </p>
-                <p>
-                    Flythrough of some vfx for a  Star Wars–inspired camp scene.</p>
+                <div class="desc-body">
+                <p>Flythrough of some vfx for a Star Wars–inspired camp scene.</p>
                 <p><strong>VFX Included</strong></p>
                 <ul>
                     <li>Fractal / Branching Lightning</li>
@@ -99,7 +101,8 @@
                     <li>Steam Effects</li>
                     <li>Heat Distortion</li>
                 </ul>
-
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -118,9 +121,8 @@
                 <p class="subtitle">
                     Unreal Engine / Shaders / Blueprints / Niagara
                 </p>
-                <p>
-                    A cabin-in-the-woods scene with a supernatural twist—magic circle, blood, webbing, and entities. Features custom snow deformation, a snow-fall tool, spline-based cables, vertex-animated boids, and blood decals.
-                </p>
+                <div class="desc-body">
+                <p>A cabin-in-the-woods scene with a supernatural twist—magic circle, blood, webbing, and entities. Features custom snow deformation, a snow-fall tool, spline-based cables, vertex-animated boids, and blood decals.</p>
                 <p><strong>VFX &amp; Tools Included</strong></p>
                 <ul>
                     <li>Landscape deformation shader (player-driven snow displacement)</li>
@@ -132,7 +134,8 @@
                     <li>Blood stain / blood spill decal tool</li>
                     <li>Fog, candles, tree sway, cloth simulation</li>
                 </ul>
-
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -151,13 +154,11 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development / WIP
                 </p>
-                <p>
-                    Developed Volumetric Clouds using raymarching. This allows for the ability to fly through clouds. The clouds are generated using a Pseudo 3D noise texture(2d Texture representing a 3d Texture) and a raymarching shader. The clouds are also affected by the sun's position and the time of day.</p>
-                <p>Also Developed Texture authoring tools to control clouds fade in and out and position within a volume (cube/sphere)</p>
-                <p>Working on implementiong an oversimplified shadow system and reducing banding artifacts(currently using noise, specifically bayer noise to offset said artifacts)</p>
-                
-                
-
+                <div class="desc-body">
+                <p>Developed Volumetric Clouds using raymarching, allowing the player to fly through them. Generated using a Pseudo 3D noise texture and a raymarching shader, affected by sun position and time of day.</p>
+                <p>Also developed texture authoring tools to control cloud fade and position within a volume. WIP: oversimplified shadow system and banding reduction via bayer noise.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -181,12 +182,10 @@
                     <p class="subtitle">
                         Unreal Engine / Niagara / Game Development / WIP
                     </p>
-                    <p>
-                        A Niagara based chain/cable simluation that uses a chain link hierarchy so each chain link maintains its position and orientation relative to the chain link above and below it</p>
-                    <p>Works with sprites ribbons and meshes. Currently working on implementing collision.</p>
-
-
-
+                    <div class="desc-body">
+                    <p>A Niagara-based chain/cable simulation using a chain link hierarchy so each link maintains position and orientation relative to its neighbors. Works with sprites, ribbons, and meshes. WIP: collision.</p>
+                    </div>
+                    <button class="desc-toggle">More ↓</button>
                 </div>
                 <div class="r-col">
                     <div class="project-carousel">
@@ -211,14 +210,10 @@
                 <p class="subtitle">
                     HLSL / Unreal Engine / Game Development
                 </p>
-                <p>
-                    A butterfly flocking simulation that uses a boids algorithm. The boids are attracted to the player or a point of interest and
-                    avoid obstacles using distance fields. The player can also attract the boids to a specific location. A falloff is calculated by how close the boids are to each other and the point of interest giving a smoother force application.
-                <p>
-
-                    The boids(butterflies) use a grid based system, rather than lopping through every boid we just loops through the boids in the cells of the grid close to the current boid.
-                </p>
-
+                <div class="desc-body">
+                <p>A butterfly flocking simulation using a boids algorithm. Boids are attracted to the player or a point of interest and avoid obstacles via distance fields. Uses a grid-based spatial system to avoid iterating over every boid.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -244,16 +239,10 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development / Vertex Shaders / WIP
                 </p>
-                <p>
-                    A real-time deformable snow system that uses vertex shaders to deform the snow mesh based on the player's position and movement requiring a tesselated or high poly mesh.
-                    Had a lot of funs and learned a lot while making this.
-                </p>
-                
-                <p>
-                    Developed a Procedural Snow System featuring a customizable accumulation system at both the material (shader-based) and mesh
-                    levels(using UE dynamic meshes), leveraging layered noise and displacement textures for realistic variation
-                </p>
-       
+                <div class="desc-body">
+                <p>Real-time deformable snow using vertex shaders to displace a tessellated mesh based on player movement. Also includes a procedural accumulation system at both material and mesh levels, using layered noise and displacement textures.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -265,7 +254,7 @@
     -->
                 </div>
             </div>
-            <div class="r-col">
+            <div class="r-col preview-extra">
                 <div class="project-carousel">
                     <img class="active" src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/vids/snow_workflow.gif" alt="gif">
                     <!-- <div class="carousel-arrows">
@@ -289,13 +278,10 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development
                 </p>
-                <p>
-                    Created Procedural Webbing simulations with two implementations: a shader-based method using Worley/Voronoi noise for scalable
-                    web patterns and a dynamic mesh system generating 3D cables that anchor to environments, spreading in customizable distributions
-                    (cone/spherical)
-                <p>
-
-
+                <div class="desc-body">
+                <p>Procedural webbing with two implementations: a shader-based method using Worley/Voronoi noise, and a dynamic mesh system generating 3D cables that anchor to environments in cone or spherical distributions.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -320,12 +306,10 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development
                 </p>
-                <p>
-                    Developed wind simulation shaders for foliage and dynamic objects such as trees, bushes, and hanging elements like clothing lines.
-                    Adjustable wind behavior using noise-based turbulence, allowing for natural motion variations across different object types.
-                    Using a multi-layered wind effects for realistic secondary motion, ensuring different parts of assets (e.g., tree trunks vs. leaves)
-                    respond uniquely to wind forces
-
+                <div class="desc-body">
+                <p>Wind simulation shaders for foliage and dynamic objects. Noise-based turbulence with multi-layered effects so different parts of an asset (trunk vs. leaves) respond uniquely to wind forces.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -335,6 +319,10 @@
                          <button class="arrow-r" onclick="plusDivs(1), plusDivs2(1)">&#10095;</button>
                      </div>
     -->
+                </div>
+            </div>
+            <div class="r-col preview-extra">
+                <div class="project-carousel">
                     <img class="active" src="https://media.githubusercontent.com/media/MrRobotIOI/home/main/img/cloth_hang.gif" alt="gif">
                 </div>
             </div>
@@ -352,11 +340,10 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development
                 </p>
-                <p>
-                    Developed a blood spatter shader that is applied using decals, the shader contains parameters that control the thickness, spread, shine
-                    and changes based on position, so no instances are ever the same.
-                    It also uses a particles system to create a dripping effect and avoids texture stretching on tightly angles surfaces using a threshold.
-
+                <div class="desc-body">
+                <p>Blood spatter shader applied via decals with parameters for thickness, spread, and shine — randomized by position so no two instances look the same. Includes a particle drip effect and threshold-based stretch prevention on tight angles.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -382,9 +369,10 @@
                 <p class="subtitle">
                     Unreal Engine / Game Development
                 </p>
-                <p>
-                    A quick weapon materialize shader I made to get a better understanding of  creating and manipulating alpha masks the material editor in Unreal Engine.
-
+                <div class="desc-body">
+                <p>A weapon materialize shader built to explore alpha mask creation and manipulation in Unreal Engine's material editor.</p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
             </div>
             <div class="r-col">
                 <div class="project-carousel">
@@ -400,7 +388,8 @@
 
 
     </div>
-    
+    </div><!-- end project-grid -->
+
 </section>
 
 
@@ -444,13 +433,13 @@
 
 
 <div class="scrollbar">
-    <div onclick="currentDot(1)" class="dot active">
+    <div class="dot active">
         <a href="#"></a>
     </div>
-    <div onclick="currentDot(2)" class="dot">
+    <div class="dot">
         <a href="#projects"></a>
     </div>
-    <div onclick="currentDot(3)" class="dot">
+    <div class="dot">
         <a href="#about"></a>
     </div>
 </div>
@@ -463,30 +452,6 @@
 
 <script src="js/script.js"></script>
 
-<script>
-    //nav sidebar indicators
-    let dotIndex = 1;
-    showDots(dotIndex);
-
-    function plusDots(n) {
-        showDots(dotIndex += n);
-    }
-
-    function currentDot(n) {
-        showDots(dotIndex = n);
-    }
-    function showDots(n) {
-        let k;
-        let slides = document.querySelectorAll("section > .container");
-        let navdots = document.getElementsByClassName("dot");
-        if (n > slides.length) { dotIndex = 1 }
-        if (n < 1) { dotIndex = slides.length }
-        for (k = 0; k < navdots.length; k++) {
-            navdots[k].className = navdots[k].className.replace(" active", "");
-        }
-        navdots[dotIndex - 1].className += " active";
-    }
-</script>
 
 </body>
 
