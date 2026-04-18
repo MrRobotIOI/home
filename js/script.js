@@ -20,39 +20,59 @@ if (thumbnail) {
 var CAROUSEL_AUTOPLAY_MS = 4000;
 
 document.querySelectorAll('.project-carousel').forEach(function(carousel) {
-  var imgs = Array.from(carousel.querySelectorAll(':scope > img'));
+  var viewport = carousel.querySelector('.project-carousel-viewport');
+  var slides = Array.from(
+    viewport
+      ? viewport.querySelectorAll('img, video')
+      : carousel.querySelectorAll(':scope > img, :scope > video')
+  );
   var descs = Array.from(carousel.querySelectorAll('.desctext div'));
-  if (!imgs.length) return;
+  if (!slides.length) return;
 
-  if (imgs.length > 1) {
+  if (slides.length > 1) {
     carousel.classList.add('project-carousel--slides');
   }
 
   var idx = 0;
-  imgs.forEach(function(img, i) {
-    if (img.classList.contains('active')) idx = i;
+  slides.forEach(function(slide, i) {
+    if (slide.classList.contains('active')) idx = i;
   });
 
   function setActive(nextIdx) {
-    imgs[idx].classList.remove('active');
+    var prev = slides[idx];
+    prev.classList.remove('active');
+    if (prev.tagName === 'VIDEO') {
+      prev.pause();
+    }
     if (descs[idx]) descs[idx].classList.remove('active');
     idx = nextIdx;
-    imgs[idx].classList.add('active');
+    var cur = slides[idx];
+    cur.classList.add('active');
+    if (cur.tagName === 'VIDEO') {
+      cur.play().catch(function() {});
+    }
     if (descs[idx]) descs[idx].classList.add('active');
   }
 
   function show(delta) {
-    var next = ((idx + delta) % imgs.length + imgs.length) % imgs.length;
+    var next = ((idx + delta) % slides.length + slides.length) % slides.length;
     setActive(next);
   }
 
-  var gifIndices = imgs
-    .map(function(img, i) {
-      return /\.gif(\?|$)/i.test(img.src) ? i : -1;
+  var gifIndices = slides
+    .map(function(slide, i) {
+      return slide.tagName === 'IMG' && /\.gif(\?|$)/i.test(slide.src) ? i : -1;
     })
     .filter(function(i) {
       return i >= 0;
     });
+
+  slides.forEach(function(slide, i) {
+    if (slide.tagName === 'VIDEO') {
+      if (i === idx) slide.play().catch(function() {});
+      else slide.pause();
+    }
+  });
 
   var gifAutoplay = carousel.classList.contains('project-carousel--gif-autoplay') && gifIndices.length > 1;
   var gifPos = Math.max(0, gifIndices.indexOf(idx));

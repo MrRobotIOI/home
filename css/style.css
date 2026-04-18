@@ -302,14 +302,16 @@ section .container {
   border-radius: 8px;
   clip-path: inset(0 round 8px);
 }
-.project-grid .project-carousel img {
+.project-grid .project-carousel img,
+.project-grid .project-carousel video {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: none;
   border-radius: inherit;
 }
-.project-grid .project-carousel img.active {
+.project-grid .project-carousel img.active,
+.project-grid .project-carousel video.active {
   display: block;
   border-radius: inherit;
   clip-path: inset(0 round 8px);
@@ -319,7 +321,7 @@ section .container {
   overflow: hidden;
 }
 .project-grid .project-carousel iframe,
-.project-grid .project-carousel video {
+.project-grid .project-carousel:not(.project-carousel--slides) video {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -492,7 +494,8 @@ section:has(.project-grid) .project-bkg {
   width: 100%;
   display: none;
 }
-.project-carousel img {
+.project-carousel img,
+.project-carousel video {
   width: 100%;
   display: none;
 }
@@ -505,12 +508,16 @@ section:has(.project-grid) .project-bkg {
   right: 10px;
 }
 
-.project-carousel img.active {
+.project-carousel img.active,
+.project-carousel video.active {
   display: block;
 }
 
 /* Multi-image project carousels (#projects): fade + slide transition */
-#projects .project-carousel.project-carousel--slides > img {
+#projects .project-carousel.project-carousel--slides > img,
+#projects .project-carousel.project-carousel--slides > video,
+#projects .project-carousel.project-carousel--slides .project-carousel-viewport > img,
+#projects .project-carousel.project-carousel--slides .project-carousel-viewport > video {
   position: absolute;
   left: 0;
   top: 0;
@@ -528,14 +535,28 @@ section:has(.project-grid) .project-bkg {
   pointer-events: none;
   z-index: 0;
 }
-#projects .project-carousel.project-carousel--slides > img.active {
+#projects .project-carousel.project-carousel--slides > img.active,
+#projects .project-carousel.project-carousel--slides > video.active,
+#projects .project-carousel.project-carousel--slides .project-carousel-viewport > img.active,
+#projects .project-carousel.project-carousel--slides .project-carousel-viewport > video.active {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
   pointer-events: auto;
   z-index: 1;
 }
-#projects > .container .project-carousel.project-carousel--slides {
+/* Viewport = image stack only; keeps .desctext below and visible (not covered by absolute imgs) */
+#projects .project-carousel.project-carousel--slides .project-carousel-viewport {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-height: 440px;
+  width: 100%;
+}
+#projects > .container .project-carousel.project-carousel--slides:has(.project-carousel-viewport) {
+  aspect-ratio: unset;
+  max-height: none;
+}
+#projects > .container .project-carousel.project-carousel--slides:not(:has(.project-carousel-viewport)) {
   position: relative;
   aspect-ratio: 16 / 9;
   max-height: 440px;
@@ -544,7 +565,8 @@ section:has(.project-grid) .project-bkg {
 .project-grid .project-carousel.project-carousel--slides {
   position: relative;
 }
-.project-grid .project-carousel.project-carousel--slides > img {
+.project-grid .project-carousel.project-carousel--slides > img,
+.project-grid .project-carousel.project-carousel--slides > video {
   position: absolute;
   left: 0;
   top: 0;
@@ -563,7 +585,8 @@ section:has(.project-grid) .project-bkg {
   z-index: 0;
   border-radius: inherit;
 }
-.project-grid .project-carousel.project-carousel--slides > img.active {
+.project-grid .project-carousel.project-carousel--slides > img.active,
+.project-grid .project-carousel.project-carousel--slides > video.active {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
@@ -572,6 +595,11 @@ section:has(.project-grid) .project-bkg {
 }
 #projects .project-carousel.project-carousel--slides .carousel-arrows {
   z-index: 2;
+}
+#projects .project-carousel .desctext {
+  position: relative;
+  z-index: 3;
+  margin-top: 12px;
 }
 
 .desctext div.active {
