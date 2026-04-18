@@ -17,28 +17,89 @@ if (thumbnail) {
 }
 
 // Per-carousel navigation — each carousel manages its own index
+var CAROUSEL_AUTOPLAY_MS = 4000;
+
 document.querySelectorAll('.project-carousel').forEach(function(carousel) {
   var imgs = Array.from(carousel.querySelectorAll(':scope > img'));
   var descs = Array.from(carousel.querySelectorAll('.desctext div'));
   if (!imgs.length) return;
+
+  if (imgs.length > 1) {
+    carousel.classList.add('project-carousel--slides');
+  }
 
   var idx = 0;
   imgs.forEach(function(img, i) {
     if (img.classList.contains('active')) idx = i;
   });
 
-  function show(n) {
+  function setActive(nextIdx) {
     imgs[idx].classList.remove('active');
     if (descs[idx]) descs[idx].classList.remove('active');
-    idx = ((idx + n) % imgs.length + imgs.length) % imgs.length;
+    idx = nextIdx;
     imgs[idx].classList.add('active');
     if (descs[idx]) descs[idx].classList.add('active');
   }
 
+  function show(delta) {
+    var next = ((idx + delta) % imgs.length + imgs.length) % imgs.length;
+    setActive(next);
+  }
+
+  var gifIndices = imgs
+    .map(function(img, i) {
+      return /\.gif(\?|$)/i.test(img.src) ? i : -1;
+    })
+    .filter(function(i) {
+      return i >= 0;
+    });
+
+  var gifAutoplay = carousel.classList.contains('project-carousel--gif-autoplay') && gifIndices.length > 1;
+  var gifPos = Math.max(0, gifIndices.indexOf(idx));
+  var autoplayTimer = null;
+
+  function advanceGifAutoplay() {
+    gifPos = (gifPos + 1) % gifIndices.length;
+    setActive(gifIndices[gifPos]);
+  }
+
+  function startGifAutoplay() {
+    if (!gifAutoplay) return;
+    stopGifAutoplay();
+    autoplayTimer = setInterval(advanceGifAutoplay, CAROUSEL_AUTOPLAY_MS);
+  }
+
+  function stopGifAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
   var arrowL = carousel.querySelector('.arrow-l');
   var arrowR = carousel.querySelector('.arrow-r');
-  if (arrowL) arrowL.addEventListener('click', function() { show(-1); });
-  if (arrowR) arrowR.addEventListener('click', function() { show(1); });
+  if (arrowL) arrowL.addEventListener('click', function() {
+    show(-1);
+    if (gifIndices.indexOf(idx) >= 0) gifPos = gifIndices.indexOf(idx);
+    if (gifAutoplay) {
+      stopGifAutoplay();
+      startGifAutoplay();
+    }
+  });
+  if (arrowR) arrowR.addEventListener('click', function() {
+    show(1);
+    if (gifIndices.indexOf(idx) >= 0) gifPos = gifIndices.indexOf(idx);
+    if (gifAutoplay) {
+      stopGifAutoplay();
+      startGifAutoplay();
+    }
+  });
+
+  if (gifAutoplay) {
+    startGifAutoplay();
+    carousel.addEventListener('mouseenter', stopGifAutoplay);
+    carousel.addEventListener('mouseleave', startGifAutoplay);
+  }
 });
 
 // Desc toggle

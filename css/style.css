@@ -508,6 +508,72 @@ section:has(.project-grid) .project-bkg {
 .project-carousel img.active {
   display: block;
 }
+
+/* Multi-image project carousels (#projects): fade + slide transition */
+#projects .project-carousel.project-carousel--slides > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(14px);
+  transition:
+    opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.45s;
+  pointer-events: none;
+  z-index: 0;
+}
+#projects .project-carousel.project-carousel--slides > img.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 1;
+}
+#projects > .container .project-carousel.project-carousel--slides {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-height: 440px;
+  width: 100%;
+}
+.project-grid .project-carousel.project-carousel--slides {
+  position: relative;
+}
+.project-grid .project-carousel.project-carousel--slides > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(14px);
+  transition:
+    opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.45s;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+.project-grid .project-carousel.project-carousel--slides > img.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 1;
+  clip-path: inset(0 round 8px);
+}
+#projects .project-carousel.project-carousel--slides .carousel-arrows {
+  z-index: 2;
+}
+
 .desctext div.active {
   display: block;
 }
@@ -719,6 +785,72 @@ section.no-hero {
   position: relative;
   margin: auto;
   padding-top: 60px;
+}
+/* Fixed viewport so image aspect ratios do not resize the page between slides */
+.slideshow-container.slideshow-stage {
+  margin: 60px auto 0;
+  padding-top: 0;
+  aspect-ratio: 16 / 9;
+  max-height: min(78vh, 900px);
+  width: 95%;
+  max-width: 1000px;
+}
+.slideshow-container.slideshow-stage.slideshow-stage--spaced {
+  margin-top: 100px;
+}
+.slideshow-container.slideshow-stage .mySlides1,
+.slideshow-container.slideshow-stage .mySlides2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.slideshow-container.slideshow-stage .mySlides1 img,
+.slideshow-container.slideshow-stage .mySlides2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.slideshow-container.slideshow-stage .prev,
+.slideshow-container.slideshow-stage .next {
+  z-index: 3;
+}
+.slideshow-container.slideshow-stage .numbertext,
+.slideshow-container.slideshow-stage .text {
+  z-index: 2;
+}
+/* Slideshow: class-based visibility + motion (replaces display:none for transitions) */
+.slideshow-container .mySlides1,
+.slideshow-container .mySlides2 {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(18px);
+  transition:
+    opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.45s;
+  pointer-events: none;
+}
+.slideshow-container .mySlides1.slide-active,
+.slideshow-container .mySlides2.slide-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+.slideshow-container .mySlides1:not(.slide-active),
+.slideshow-container .mySlides2:not(.slide-active) {
+  z-index: 1;
+}
+.slideshow-container .mySlides1.fade,
+.slideshow-container .mySlides2.fade {
+  animation: none;
 }
 .mySlides,
 .mySlides1,
