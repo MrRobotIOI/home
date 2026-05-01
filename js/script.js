@@ -171,6 +171,16 @@ document.querySelectorAll('.desc-toggle').forEach(function(btn) {
   onScroll();
 })();
 
+// Topic focus from URL — glow + scroll-to for the targeted card
+var FOCUS_EL = (function() {
+  var topic = new URLSearchParams(window.location.search).get('topic');
+  return topic ? document.getElementById(topic) : null;
+})();
+
+if (FOCUS_EL) {
+  FOCUS_EL.classList.add('is-focused');
+}
+
 // Project category filter (with URL state via ?filter=)
 (function() {
   var VALID = ['all', 'programming', 'games'];
@@ -184,6 +194,19 @@ document.querySelectorAll('.desc-toggle').forEach(function(btn) {
 
   function apply(filter) {
     filter = normalize(filter);
+
+    // If a focused card exists in the grid and this filter would hide it, fall back to 'all'
+    if (
+      FOCUS_EL &&
+      FOCUS_EL.parentElement &&
+      FOCUS_EL.parentElement.classList.contains('project-grid') &&
+      filter !== 'all' &&
+      FOCUS_EL.dataset.category &&
+      FOCUS_EL.dataset.category !== filter
+    ) {
+      filter = 'all';
+    }
+
     pills.forEach(function(pill) {
       var isActive = pill.dataset.filter === filter;
       pill.classList.toggle('active', isActive);
@@ -218,12 +241,11 @@ document.querySelectorAll('.desc-toggle').forEach(function(btn) {
   apply(initial);
 })();
 
-// URL topic scrolling
-document.addEventListener('DOMContentLoaded', function() {
-  var urlParams = new URLSearchParams(window.location.search);
-  var topic = urlParams.get('topic');
-  if (topic) {
-    var el = document.getElementById(topic);
-    if (el) window.scrollTo({ top: el.offsetTop, behavior: "instant" });
-  }
-});
+// Scroll to focused card on initial paint (and once more on full load
+// so images settling in don't leave the card off-screen)
+function scrollToFocus() {
+  if (!FOCUS_EL) return;
+  FOCUS_EL.scrollIntoView({ block: 'center', behavior: 'instant' });
+}
+document.addEventListener('DOMContentLoaded', scrollToFocus);
+window.addEventListener('load', scrollToFocus);
