@@ -352,14 +352,17 @@ section .container {
   margin-top: 0;
 }
 .project-grid h2 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  font-size: clamp(1em, 2.6vw, 1.4em);
+  line-height: 1.15;
 }
 .project-grid .subtitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .project-grid .button a {
   margin-top: 14px;
