@@ -171,11 +171,124 @@ document.querySelectorAll('.desc-toggle').forEach(function(btn) {
   onScroll();
 })();
 
-// Topic focus from URL — glow + scroll-to for the targeted card
+// Right-click on a project card → "Copy focus link" custom menu
+(function() {
+  var cards = document.querySelectorAll('.project-grid > .container[id]');
+  if (!cards.length) return;
+
+  var menu = document.createElement('div');
+  menu.className = 'card-context-menu';
+  menu.setAttribute('role', 'menu');
+  menu.hidden = true;
+
+  var copyBtn = document.createElement('button');
+  copyBtn.type = 'button';
+  copyBtn.className = 'card-context-menu__item';
+  copyBtn.setAttribute('role', 'menuitem');
+  var DEFAULT_LABEL = 'Copy focus link';
+  copyBtn.textContent = DEFAULT_LABEL;
+  menu.appendChild(copyBtn);
+  document.body.appendChild(menu);
+
+  var activeCard = null;
+
+  function buildLink(card) {
+    var base = window.location.href.split('?')[0].split('#')[0];
+    return base + '?topic=' + encodeURIComponent(card.id);
+  }
+
+  function show(x, y, card) {
+    activeCard = card;
+    menu.hidden = false;
+    menu.style.left = '0px';
+    menu.style.top = '0px';
+    var rect = menu.getBoundingClientRect();
+    var px = Math.min(x, window.innerWidth - rect.width - 8);
+    var py = Math.min(y, window.innerHeight - rect.height - 8);
+    menu.style.left = Math.max(8, px) + 'px';
+    menu.style.top = Math.max(8, py) + 'px';
+  }
+
+  function hide() {
+    menu.hidden = true;
+    activeCard = null;
+    copyBtn.textContent = DEFAULT_LABEL;
+  }
+
+  function flash(label, ms) {
+    copyBtn.textContent = label;
+    setTimeout(hide, ms || 800);
+  }
+
+  cards.forEach(function(card) {
+    card.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      show(e.clientX, e.clientY, card);
+    });
+  });
+
+  copyBtn.addEventListener('click', function() {
+    if (!activeCard) return hide();
+    var url = buildLink(activeCard);
+    var done = function() { flash('Copied!'); };
+    var fail = function() { flash('Copy failed', 1200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(fail);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        done();
+      } catch (err) {
+        fail();
+      }
+      document.body.removeChild(ta);
+    }
+  });
+
+  document.addEventListener('mousedown', function(e) {
+    if (!menu.hidden && !menu.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hide();
+  });
+  window.addEventListener('scroll', hide, true);
+  window.addEventListener('resize', hide);
+  window.addEventListener('blur', hide);
+})();
+
+// Topic focus from URL — filter wins, so only honour ?topic= when no real filter is set.
+// If both are present, drop ?topic= from the URL on load.
 var FOCUS_EL = (function() {
-  var topic = new URLSearchParams(window.location.search).get('topic');
+  var qs = new URLSearchParams(window.location.search);
+  var filter = qs.get('filter');
+  var topic = qs.get('topic');
+  if (filter && filter !== 'all') {
+    if (topic) {
+      var url = new URL(window.location.href);
+      url.searchParams.delete('topic');
+      window.history.replaceState(null, '', url);
+    }
+    return null;
+  }
   return topic ? document.getElementById(topic) : null;
 })();
+
+function clearFocus() {
+  if (FOCUS_EL) FOCUS_EL.classList.remove('is-focused');
+  FOCUS_EL = null;
+  var url = new URL(window.location.href);
+  if (url.searchParams.has('topic')) {
+    url.searchParams.delete('topic');
+    window.history.replaceState(null, '', url);
+  }
+}
 
 if (FOCUS_EL) {
   FOCUS_EL.classList.add('is-focused');
@@ -194,19 +307,6 @@ if (FOCUS_EL) {
 
   function apply(filter) {
     filter = normalize(filter);
-
-    // If a focused card exists in the grid and this filter would hide it, fall back to 'all'
-    if (
-      FOCUS_EL &&
-      FOCUS_EL.parentElement &&
-      FOCUS_EL.parentElement.classList.contains('project-grid') &&
-      filter !== 'all' &&
-      FOCUS_EL.dataset.category &&
-      FOCUS_EL.dataset.category !== filter
-    ) {
-      filter = 'all';
-    }
-
     pills.forEach(function(pill) {
       var isActive = pill.dataset.filter === filter;
       pill.classList.toggle('active', isActive);
@@ -232,6 +332,7 @@ if (FOCUS_EL) {
   pills.forEach(function(pill) {
     pill.addEventListener('click', function() {
       var filter = normalize(pill.dataset.filter);
+      if (filter !== 'all') clearFocus();
       apply(filter);
       updateUrl(filter);
     });
