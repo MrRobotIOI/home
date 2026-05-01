@@ -105,8 +105,14 @@
         </div>
     </div>
 
+    <div class="project-filters" role="tablist" aria-label="Filter projects">
+        <button class="filter-pill" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-pill" data-filter="programming" role="tab" aria-selected="false">Programming</button>
+        <button class="filter-pill" data-filter="games" role="tab" aria-selected="false">Games</button>
+    </div>
+
     <div class="project-grid">
-    <div class="container" id="mymls">
+    <div class="container" id="mymls" data-category="programming">
         <div class="project">
             <h2>Real Estate AI Assistant</h2>
 
@@ -144,7 +150,46 @@
             </div>
         </div>
     </div>
-    <div class="container" id="timeline-of-technology">
+    <div class="container" id="freyr" data-category="programming">
+        <div class="project">
+            <h2>Freyr: Know Your Plants</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    React Native / Expo / TypeScript / Fastify / PostgreSQL
+                </p>
+
+                <div class="desc-body">
+                <p>
+                    iOS app on the App Store that identifies plants from a photo using GPT-4o Vision + PlantNet, then tracks their health and care over time.
+                </p>
+                <p>
+                    Built the React Native + Expo client and a Fastify + PostgreSQL backend with JWT auth, scan history, care logs, a nearby/online plant marketplace, and an in-app subscription system.
+                </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
+                <div class="button">
+                    <a href="https://apps.apple.com/us/app/freyr-know-your-plants/id6760571013" target="_blank">VIEW ON APP STORE</a>
+                </div>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <img class="active" src="img/freyr/scan.png" alt="Freyr plant scan camera view">
+                    <img src="img/freyr/profile.png" alt="Freyr plant profile with health trend">
+                    <img src="img/freyr/paywall.png" alt="Freyr subscription paywall">
+                    <img src="img/freyr/signin.png" alt="Freyr sign-in screen">
+                    <img src="img/freyr/shop-online.png" alt="Freyr online plant marketplace">
+                    <img src="img/freyr/shop-nearby.png" alt="Freyr nearby shop map">
+                    <div class="carousel-arrows">
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="timeline-of-technology" data-category="games">
         <div class="project">
             <h2>Timeline of Technology</h2>
 
@@ -171,7 +216,7 @@
             </div>
         </div>
     </div>
-    <div class="container" id="insomnia">
+    <div class="container" id="insomnia" data-category="games">
         <div class="project">
             <h2>Insomnia</h2>
 
@@ -256,7 +301,7 @@
             </div>
         </div>
     </div>
-    <div class="container" id="newtoniangravity">
+    <div class="container" id="newtoniangravity" data-category="games">
 
         <div class="project" >
             <h2>Newtonian Gravity</h2>
@@ -296,7 +341,7 @@
         </div>
     </div>
 
-    <div class="container" id="proceduralsnow" >
+    <div class="container" id="proceduralsnow" data-category="games">
         <div class="project">
             <div class="l-col">
                 <h2>Procedural Snow System</h2>
@@ -347,7 +392,7 @@
             </div>
         </div>
     </div>
-    <div class="container" >
+    <div class="container" data-category="programming">
         <div class="project">
             <h2>Climate Globe</h2>
 
@@ -392,7 +437,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container" data-category="games">
         <div class="project">
             <h2>Super DokiDoki</h2>
 
@@ -431,7 +476,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-category="games">
         <div class="project">
             <h2>Super Bow</h2>
 
@@ -459,7 +504,7 @@
         </div>
     </div>
 
-    <div class="container" >
+    <div class="container" data-category="programming">
         <div class="project">
             <h2>Marvel Snap GO</h2>
 
@@ -497,7 +542,7 @@
         </div>
     </div>
     
-    <div class="container">
+    <div class="container" data-category="programming">
         <div class="project">
             <h2>Model Kit Database</h2>
 
@@ -552,7 +597,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-category="games">
         <div class="project">
             <h2>Wake</h2>
 
@@ -597,7 +642,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-category="games">
         <div class="project">
             <h2>Blight Souls</h2>
 
@@ -645,7 +690,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-category="programming">
         <div class="project">
             <h2>GWENT Java</h2>
 

@@ -171,6 +171,53 @@ document.querySelectorAll('.desc-toggle').forEach(function(btn) {
   onScroll();
 })();
 
+// Project category filter (with URL state via ?filter=)
+(function() {
+  var VALID = ['all', 'programming', 'games'];
+  var pills = document.querySelectorAll('.filter-pill');
+  var projects = document.querySelectorAll('.project-grid > .container');
+  if (!pills.length || !projects.length) return;
+
+  function normalize(value) {
+    return VALID.indexOf(value) >= 0 ? value : 'all';
+  }
+
+  function apply(filter) {
+    filter = normalize(filter);
+    pills.forEach(function(pill) {
+      var isActive = pill.dataset.filter === filter;
+      pill.classList.toggle('active', isActive);
+      pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    projects.forEach(function(project) {
+      var category = project.dataset.category;
+      var visible = filter === 'all' || category === filter;
+      project.classList.toggle('is-hidden', !visible);
+    });
+  }
+
+  function updateUrl(filter) {
+    var url = new URL(window.location.href);
+    if (filter === 'all') {
+      url.searchParams.delete('filter');
+    } else {
+      url.searchParams.set('filter', filter);
+    }
+    window.history.replaceState(null, '', url);
+  }
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      var filter = normalize(pill.dataset.filter);
+      apply(filter);
+      updateUrl(filter);
+    });
+  });
+
+  var initial = normalize(new URLSearchParams(window.location.search).get('filter'));
+  apply(initial);
+})();
+
 // URL topic scrolling
 document.addEventListener('DOMContentLoaded', function() {
   var urlParams = new URLSearchParams(window.location.search);
