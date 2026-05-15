@@ -208,10 +208,25 @@
                 </p>
                 </div>
                 <button class="desc-toggle">More ↓</button>
+                <div class="button">
+                    <a href="docs/DATT4700-Timeline-of-Technology-Final-Documentation.pdf" target="_blank" rel="noopener noreferrer">VIEW FINAL DOCUMENTATION (PDF)</a>
+                </div>
             </div>
             <div class="r-col">
-                <div class="project-carousel">
+                <div class="project-carousel" data-autoplay-ms="6000">
                     <img class="active" src="img/TIT/TIT_Gameplay.gif" alt="Timeline of Technology gameplay">
+                    <video muted loop playsinline controls style="width: 100%">
+                        <source src="vids/TIT-rope-stuff.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video muted loop playsinline controls style="width: 100%">
+                        <source src="vids/TIT-final-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="carousel-arrows">
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -439,6 +454,75 @@
         </div>
     </div>
 
+    <div class="container" id="ai-npc-systems" data-category="programming">
+        <div class="project">
+            <h2>AI NPCs: Combat, Navigation &amp; Movesets</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Unreal Engine / Blueprints / Behaviour Trees
+                </p>
+
+                <div class="desc-body">
+                <p>
+                    Enemy NPCs use behaviour trees with roam and attack states, reacting to the player and the combat space.
+                </p>
+                <p>
+                    Third-person lock-on keeps targets readable while the player picks situational moves from a moveset (different attacks or actions depending on context).
+                </p>
+                <p>
+                    Two captures below: combat encounters with lock-on, and navigation-focused roaming behaviour.
+                </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel" data-autoplay-ms="8000">
+                    <video class="active" muted loop playsinline controls style="width: 100%">
+                        <source src="vids/ai-combat.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video muted loop playsinline controls style="width: 100%">
+                        <source src="vids/ai-navigation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="carousel-arrows">
+                        <button class="arrow-l">&#10094;</button>
+                        <button class="arrow-r">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="six-dof-movement" data-category="programming">
+        <div class="project">
+            <h2>Six Degrees of Freedom Player Movement</h2>
+
+            <div class="l-col">
+
+                <p class="subtitle">
+                    Unreal Engine / Blueprints / Gameplay Programming
+                </p>
+
+                <div class="desc-body">
+                <p>
+                    A six degrees of freedom (6DOF) movement system for the player: full orientation and translation control in 3D space for flight-style traversal and combat positioning.
+                </p>
+                </div>
+                <button class="desc-toggle">More ↓</button>
+            </div>
+            <div class="r-col">
+                <div class="project-carousel">
+                    <video class="active" muted loop playsinline controls style="width: 100%">
+                        <source src="vids/6dof-movement-system.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container" id="super-dokidoki" data-category="games">
         <div class="project">
